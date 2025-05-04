@@ -1,0 +1,39 @@
+.centering-examples > div {
+    border: 1px dashed #ccc;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+/* margin: 0 auto; */
+.center-block {
+    width: 80%; /* 幅を指定する必要がある */
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fef9e7;
+    text-align: center; /* 中のテキストも中央揃えにする場合 */
+}
+
+/* text-align: center; */
+.center-text-parent {
+    text-align: center;
+    background-color: #f2f3f4;
+}
+.center-text-child {
+    /* インライン要素やインラインブロック要素が対象 */
+    display: inline-block; /* buttonはデフォルトでこれに近い */
+    margin-top: 0.5em; /* ボタンとの隙間 */
+}
+
+/* Flexbox中央揃え */
+.center-flex-parent {
+    display: flex;
+    justify-content: center; /* 水平中央 */
+    align-items: center; /* 垂直中央 */
+    min-height: 100px; /* 高さを指定しないとalign-itemsの効果が分かりにくい */
+    background-color: #e8f6f3;
+}
+.center-flex-child {
+    background-color: #d0ece7;
+    padding: 10px 20px;
+}
