@@ -1,0 +1,138 @@
+/* --- フッター全体 --- */
+.site-footer {
+    background-color: #f8f9fa; /* フッターの背景色 (明るいグレー) */
+    color: #495057; /* フッターの基本文字色 */
+    padding: 3em 0 1.5em; /* 上下の余白 (上を多めに) */
+    font-size: 0.9rem;
+    margin-top: auto; /* Flexboxレイアウトで下部に配置 */
+    border-top: 1px solid #e9ecef; /* 上境界線 */
+}
+
+/* --- フッターコンテナ (3カラムレイアウト) --- */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto 2em; /* 下にコピーライトエリアとの余白 */
+    padding: 0 20px;
+    display: flex; /* Flexboxでカラムを横並び */
+    justify-content: space-between; /* カラム間のスペースを均等に */
+    align-items: flex-start; /* 上端揃え */
+    flex-wrap: wrap; /* 画面幅が狭い場合に折り返す */
+    gap: 30px; /* カラム間の最小の隙間 */
+}
+
+/* --- 各カラムの基本スタイル --- */
+.footer-column {
+    flex: 1; /* 基本的に均等割り */
+    min-width: 200px; /* 最小幅を指定して折り返しやすくする */
+}
+
+/* --- カラム1: ロゴ --- */
+.footer-logo h2 {
+    margin: 0 0 0.5em;
+    font-size: 1.6rem;
+}
+.footer-logo h2 a {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-logo img {
+    max-width: 150px; /* ロゴ画像の最大幅 */
+    height: auto;
+    display: block;
+    margin-bottom: 0.8em;
+}
+.footer-tagline {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- カラム2: ナビゲーション --- */
+.footer-nav h3 {
+    font-size: 1.1rem;
+    margin: 0 0 1em;
+    color: #343a40;
+}
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-nav li {
+    margin-bottom: 0.6em;
+}
+.footer-nav a {
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.footer-nav a:hover,
+.footer-nav a:focus {
+    color: #007bff; /* ホバー色 */
+    text-decoration: underline;
+    outline: none;
+}
+
+/* --- カラム3: お問い合わせボタン (CTA) --- */
+.footer-cta h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.8em;
+    color: #343a40;
+}
+.footer-cta p {
+    margin: 0 0 1em;
+    line-height: 1.5;
+}
+.footer-button {
+    display: inline-block;
+    background-color: #007bff; /* ボタンの背景色 */
+    color: #fff; /* ボタンの文字色 */
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.footer-button:hover,
+.footer-button:focus {
+    background-color: #0056b3; /* ホバー時の背景色 */
+    color: #fff;
+    transform: translateY(-1px); /* 少し浮かせる */
+    outline: none;
+}
+
+
+/* --- コピーライトエリア --- */
+.copyright-area {
+    border-top: 1px solid #e9ecef; /* 上のコンテンツとの区切り線 */
+    padding: 1.5em 20px 0; /* 上の余白 */
+    text-align: center;
+}
+.copyright {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* --- レスポンシブ対応 (例: 768px以下で縦積み) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* 縦積みに変更 */
+        align-items: center; /* 中央揃え */
+        text-align: center; /* 各カラム内のテキストも中央揃え */
+        gap: 40px; /* 縦積み時のカラム間の隙間 */
+    }
+    .footer-column {
+        min-width: auto; /* 最小幅リセット */
+        width: 100%; /* 幅を100%に */
+        max-width: 400px; /* 中央揃え時の最大幅（任意） */
+    }
+    .footer-nav ul {
+        /* ナビゲーションリスト自体の配置は中央揃えのまま */
+    }
+    .footer-cta {
+        /* CTAボタンも中央に */
+    }
+}

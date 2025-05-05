@@ -1,0 +1,55 @@
+.flex-container {
+    display: flex; /* 基本 */
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1em;
+    min-height: 80px; /* align-items の効果確認用 */
+}
+.flex-item {
+    background-color: #aed6f1;
+    color: #1b4f72;
+    padding: 15px;
+    margin: 5px; /* アイテム間の隙間 */
+    border-radius: 4px;
+    text-align: center;
+    flex-grow: 1; /* スペースを均等に埋める（任意） */
+}
+
+/* 横並び (デフォルト) */
+.example-row {
+    /* flex-direction: row; (デフォルト) */
+}
+
+/* 縦並び */
+.example-column {
+    flex-direction: column;
+}
+
+/* 折り返し */
+.example-wrap {
+    flex-wrap: wrap;
+}
+.example-wrap .flex-item {
+    flex-basis: 150px; /* 折り返しの基準幅（任意） */
+    flex-grow: 0; /* この例では広げない */
+}
+
+/* 水平方向の揃え */
+.example-justify {
+    justify-content: space-between; /* 両端揃え */
+    /* 他: flex-start(左), flex-end(右), center(中央), space-around, space-evenly */
+}
+.example-justify .flex-item {
+    flex-grow: 0; /* この例では広げない */
+}
+
+/* 垂直方向の揃え */
+.example-align {
+    align-items: center; /* 中央揃え */
+    /* 他: flex-start(上), flex-end(下), stretch(高さ一杯), baseline */
+}
+.tall-item {
+    min-height: 60px; /* 高さに差を付ける */
+    line-height: 60px; /* テキストも中央に（任意） */
+}

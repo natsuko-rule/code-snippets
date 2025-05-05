@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>上下2段のヘッダー</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="site-header">
+        <!-- 上段ヘッダー -->
+        <div class="header-top">
+            <div class="header-container header-container-top">
+                <div class="header-info">
+                    <span class="phone-number">TEL: 03-1234-5678 (平日 9:00-18:00)</span>
+                </div>
+                <nav class="sub-nav">
+                    <ul>
+                        <li><a href="/faq/">よくある質問</a></li>
+                        <li><a href="/access/">アクセス</a></li>
+                        <li><a href="/login/">ログイン</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     
+        <!-- 下段ヘッダー (メイン) -->
+        <div class="header-main">
+            <div class="header-container header-container-main">
+                <!-- サイトロゴ -->
+                <div class="site-logo">
+                    <h1><a href="/">サイトタイトル</a></h1>
+                    <!-- 画像ロゴの場合 -->
+                    <!-- <a href="/"><img src="logo.png" alt="サイト名"></a> -->
+                </div>
+    
+                <!-- グローバルナビゲーション -->
+                <nav class="global-nav">
+                    <ul>
+                        <li><a href="/about/">私たちについて</a></li>
+                        <li><a href="/services/">サービス</a></li>
+                        <li><a href="/works/">制作実績</a></li>
+                        <li><a href="/contact/">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+    
+                <!-- (レスポンシブ用) ハンバーガーメニューボタン (JSなしでは機能しません) -->
+                <button class="hamburger-button" type="button" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
 </body>
 </html>

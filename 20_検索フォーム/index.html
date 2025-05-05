@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>検索フォーム</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <form action="/search" method="get" class="search-form simple-search">
+        <label for="search-input-1" class="visually-hidden">検索キーワード</label>
+        <input type="search" id="search-input-1" name="q" placeholder="キーワードを入力..." class="search-input">
+        <button type="submit" class="search-button">検索</button>
+    </form>
 </body>
 </html>

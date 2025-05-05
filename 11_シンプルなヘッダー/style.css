@@ -1,0 +1,60 @@
+/* --- ヘッダー全体 --- */
+.site-header {
+    background-color: #ffffff; /* ヘッダーの背景色 */
+    padding: 15px 0; /* 上下の余白 */
+    border-bottom: 1px solid #e0e0e0; /* ヘッダー下の境界線 */
+    width: 100%;
+    /* position: sticky; top: 0; z-index: 100; を追加すればスクロール追従になります */
+}
+
+/* --- ヘッダーコンテナ --- */
+.header-container {
+    max-width: 1200px; /* コンテンツの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右の余白 */
+    display: flex; /* Flexboxで中身を横並び */
+    justify-content: space-between; /* 両端揃え */
+    align-items: center; /* 上下中央揃え */
+    flex-wrap: wrap; /* 画面幅が狭い場合に折り返す（任意） */
+    gap: 15px; /* 折り返した際のロゴとナビの隙間（任意） */
+}
+
+/* --- サイトロゴ --- */
+.site-logo a {
+    color: #333; /* ロゴの色 */
+    font-weight: bold;
+}
+.site-logo img {
+    display: block; /* 画像下の余白を消す */
+    max-height: 40px; /* ロゴ画像の高さ調整 */
+    width: auto;
+}
+
+
+/* --- グローバルナビゲーション --- */
+.global-nav ul {
+    display: flex; /* リスト項目を横並び */
+    flex-wrap: wrap; /* メニュー項目が多い、または画面幅が狭い場合に折り返す（任意） */
+    gap: 10px 25px; /* 縦方向の隙間 横方向の隙間 (折り返し考慮) */
+}
+
+.global-nav a {
+    display: block; /* クリック領域確保と折り返し時の体裁 */
+    color: #555; /* ナビゲーションリンクの色 */
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 5px 8px; /* ホバー範囲や見た目の調整 */
+    position: relative; /* ホバーエフェクトの基準 */
+    transition: color 0.3s ease;
+}
+
+/* ホバーエフェクト (シンプルな背景色変更) */
+.global-nav a:hover,
+.global-nav a:focus {
+    color: #333; /* ホバー時の文字色 */
+    background-color: #f0f0f0; /* ホバー時の背景色 */
+    border-radius: 4px; /* 角丸（任意） */
+    outline: none;
+}
+
+/* 下線アニメーションを使いたい場合は、前の例の a::after スタイルをここに持ってきてください */

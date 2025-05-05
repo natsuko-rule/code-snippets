@@ -1,0 +1,53 @@
+/* 表示調整用 */
+body{
+    margin: 100px;
+}
+/* ツールチップのコンテナ（トリガー要素） */
+.tooltip-container {
+    position: relative; /* ツールチップの位置決めの基準 */
+    display: inline-block; /* インライン要素として振る舞いつつ、基準になれるように */
+    border-bottom: 1px dotted black; /* ツールチップがあることを示す下線（任意） */
+    cursor: help; /* ヘルプカーソル（任意） */
+}
+
+/* ツールチップのテキスト部分（初期状態は非表示） */
+.tooltip-container .tooltip-text {
+    visibility: hidden; /* 要素を隠す（レイアウト領域は確保される）*/
+    opacity: 0; /* 透明にする */
+    width: 160px; /* ツールチップの幅 */
+    background-color: #555; /* 背景色 */
+    color: #fff; /* 文字色 */
+    text-align: center; /* 文字を中央揃え */
+    border-radius: 6px; /* 角丸 */
+    padding: 8px 10px; /* 内側の余白 */
+    font-size: 0.9em; /* 文字サイズ */
+
+    /* 位置決め (要素の上、中央に配置) */
+    position: absolute;
+    z-index: 1; /* 他の要素より手前に表示 */
+    bottom: 130%; /* 要素の上からの距離 (100% + 矢印高さ + 少し離す) */
+    left: 50%; /* 親要素の左端から50%の位置へ */
+    margin-left: -80px; /* 幅の半分だけ左にずらして中央揃え (width/2) */
+
+    /* フェードイン/アウトのアニメーション */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 吹き出しの矢印部分 (疑似要素で作成) */
+.tooltip-container .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* ツールチップの下端に配置 */
+    left: 50%;
+    margin-left: -5px; /* 矢印の幅の半分 */
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent; /* 上向きの三角形 */
+}
+
+/* ホバー時またはフォーカス時にツールチップを表示 */
+.tooltip-container:hover .tooltip-text,
+  .tooltip-container:focus .tooltip-text { /* :focus を追加してキーボード操作にも対応 */
+    visibility: visible; /* 表示 */
+    opacity: 1; /* 不透明 */
+}

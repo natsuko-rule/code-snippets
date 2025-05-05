@@ -1,0 +1,28 @@
+.basic-button {
+    display: inline-block; /* width/height/paddingなどを適用可能に */
+    padding: 10px 20px; /* 上下 左右の余白 */
+    border: 1px solid transparent; /* デフォルトの境界線をリセットしつつ領域確保 */
+    border-radius: 5px; /* 角丸 */
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2; /* ボタン内のテキスト行間 */
+    text-align: center;
+    vertical-align: middle; /* 隣接要素との縦位置揃え */
+    cursor: pointer; /* カーソルをポインターに */
+    background-color: #f0f0f0; /* デフォルトの背景色 */
+    color: #333; /* デフォルトの文字色 */
+    /* ↓ トランジションを最初から付けておくと、後で疑似クラスでスタイル変更した際に滑らか */
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+/* ボタンのバリエーション（例） */
+.primary-button {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+.secondary-button {
+    background-color: transparent;
+    color: #555;
+    border-color: #ccc;
+}

@@ -1,0 +1,111 @@
+/* --- 基本的な吹き出しスタイル --- */
+.balloon {
+    position: relative; /* 疑似要素の配置基準 */
+    display: inline-block; /* 内容に合わせて幅が変わるように */
+    max-width: 300px; /* 最大幅 */
+    padding: 1em 1.5em;
+    background-color: #e0f7fa; /* 背景色 (水色系) */
+    border-radius: 8px;
+    line-height: 1.5;
+    margin-bottom: 20px; /* しっぽの分のスペース */
+}
+
+/* --- しっぽ (下向き) --- */
+.balloon-bottom::after {
+    content: '';
+    position: absolute;
+    /* ▼しっぽの位置 */
+    bottom: -10px; /* 吹き出しの下に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* ▼しっぽの形状 (三角形) */
+    border-width: 10px 10px 0 10px; /* 上・右・下・左 */
+    border-style: solid;
+    border-color: #e0f7fa transparent transparent transparent; /* 上辺に背景色、他は透明 */
+    width: 0;
+    height: 0;
+}
+
+/* --- 角丸スタイル --- */
+.rounded {
+    border-radius: 12px; /* 角丸の半径を調整 */
+}
+
+  /* --- しっぽ (左向き) --- */
+.balloon-left::after {
+    content: '';
+    position: absolute;
+    /* ▼しっぽの位置 */
+    top: 50%;
+    left: -10px; /* 吹き出しの左に配置 */
+    transform: translateY(-50%);
+    /* ▼しっぽの形状 (三角形) */
+    border-width: 10px 10px 10px 0; /* 上・右・下・左 */
+    border-style: solid;
+    border-color: transparent #f8bbd0 transparent transparent; /* 右辺に背景色 (ピンク系) */
+    width: 0;
+    height: 0;
+}
+
+/* 左向き吹き出し用の背景色 (例: ピンク系) */
+.balloon-left {
+    background-color: #f8bbd0;
+    margin-left: 20px; /* しっぽの分のスペース */
+    margin-bottom: 0; /* 下マージンリセット */
+}
+.balloon-left.rounded::after {
+    border-color: transparent #f8bbd0 transparent transparent;
+}
+
+/* --- 枠線付きスタイル --- */
+.bordered {
+border: 2px solid #a5d6a7; /* 枠線の色 (緑系) */
+background-color: #e8f5e9; /* 背景色 */
+}
+
+/* しっぽ (上向き) - 枠線用 (::before) */
+.balloon-top-right::before {
+    content: '';
+    position: absolute;
+    /* ▼しっぽの位置 (背景色用より少し外側) */
+    top: -12px; /* 枠線の太さ分外へ */
+    right: 28px; /* 右からの位置 (10px + 枠線幅 * 2?) 調整が必要 */
+    /* ▼しっぽの形状 (三角形) */
+    border-width: 0 12px 12px 12px; /* 上・右・下・左 */
+    border-style: solid;
+    border-color: transparent transparent #a5d6a7 transparent; /* 下辺に枠線の色 */
+    width: 0;
+    height: 0;
+    z-index: 0; /* 背景色用より背面 */
+}
+
+/* しっぽ (上向き) - 背景色用 (::after) */
+.balloon-top-right::after {
+    content: '';
+    position: absolute;
+    /* ▼しっぽの位置 */
+    top: -10px; /* 吹き出しの上に配置 */
+    right: 30px; /* 右からの位置を調整 */
+    /* ▼しっぽの形状 (三角形) */
+    border-width: 0 10px 10px 10px; /* 上・右・下・左 */
+    border-style: solid;
+    border-color: transparent transparent #e8f5e9 transparent; /* 下辺に背景色 */
+    width: 0;
+    height: 0;
+    z-index: 1; /* 枠線用より手前 */
+}
+
+/* 上向き吹き出し用のマージン */
+.balloon-top-right {
+    margin-top: 20px; /* しっぽの分のスペース */
+    margin-bottom: 0;
+}
+
+/* --- グラデーションコメント風スタイル --- */
+.gradient-comment {
+    background: linear-gradient(135deg, #ffecb3, #ffe082); /* 背景グラデーション (黄色系) */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* 簡単な影 */
+    margin-bottom: 0; /* 下マージン不要 */
+}
+  /* しっぽは不要なので ::after などは定義しない */

@@ -1,0 +1,65 @@
+/* --- フッター全体 --- */
+.site-footer {
+    background-color: #333; /* フッターの背景色 (濃いグレー) */
+    color: #ccc; /* フッターの基本文字色 (明るいグレー) */
+    padding: 2em 0; /* 上下の余白 */
+    font-size: 0.85rem; /* フッター内の基本文字サイズ */
+    margin-top: auto; /* Flexboxレイアウトでmain要素が伸びた後に配置されるように */
+}
+
+/* --- フッターコンテナ --- */
+.footer-container {
+    max-width: 1200px; /* コンテンツの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右の余白 */
+    text-align: center; /* デフォルトでコンテンツを中央揃え */
+}
+
+/* --- フッターナビゲーション (オプション) --- */
+.footer-nav {
+    margin-bottom: 1.5em; /* ナビゲーションとコピーライトの間の余白 */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 横並びにする */
+    flex-wrap: wrap; /* 画面幅が狭い場合に折り返す */
+    justify-content: center; /* 中央揃え */
+    gap: 10px 25px; /* 縦方向の隙間 横方向の隙間 */
+}
+
+.footer-nav a {
+    color: #eee; /* フッターナビのリンク色 */
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    color: #fff; /* ホバー時の色 */
+    text-decoration: underline; /* ホバー時に下線 */
+    outline: none;
+}
+
+/* --- コピーライト表記 --- */
+.copyright {
+    margin: 0; /* デフォルトのマージンをリセット */
+    color: #aaa; /* コピーライトの文字色を少し暗めに */
+}
+
+/* --- 簡単なレスポンシブ調整 (任意) --- */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 1.5em 0;
+        font-size: 0.8rem;
+    }
+    .footer-nav ul {
+        flex-direction: column; /* スマホ表示では縦並びにする場合 */
+        gap: 12px; /* 縦並び時の隙間 */
+    }
+    .footer-nav {
+        margin-bottom: 1.2em;
+    }
+}

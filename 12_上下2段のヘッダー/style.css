@@ -1,0 +1,151 @@
+/* --- 基本的なリセット --- */
+body { margin: 0; font-family: sans-serif; }
+h1 { margin: 0; font-size: 1.8rem; } /* メインロゴのサイズ */
+ul { list-style: none; margin: 0; padding: 0; }
+a { text-decoration: none; color: inherit; }
+
+/* --- ヘッダー全体 --- */
+.site-header {
+    /* position: sticky; top: 0; z-index: 100; を追加すれば全体が追従 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* ヘッダー全体の下に影 */
+}
+
+/* --- 上段ヘッダー --- */
+.header-top {
+    background-color: #f8f9fa; /* 上段の背景色 (明るいグレー) */
+    padding: 8px 0; /* 上段の上下の余白 */
+    border-bottom: 1px solid #e9ecef; /* 下段との境界線 */
+    font-size: 0.8rem; /* 上段の文字サイズ */
+    color: #6c757d; /* 上段の基本文字色 */
+}
+
+.header-container-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 狭い場合に折り返し */
+    gap: 10px;
+}
+
+.header-info .phone-number {
+    font-weight: 500;
+}
+
+.sub-nav ul {
+    display: flex;
+    gap: 15px; /* 補助リンク間の隙間 */
+}
+.sub-nav a {
+    transition: color 0.2s ease;
+}
+.sub-nav a:hover,
+.sub-nav a:focus {
+    color: #007bff; /* ホバー色 */
+    outline: none;
+}
+
+/* --- 下段ヘッダー (メイン) --- */
+.header-main {
+    background-color: #ffffff; /* 下段の背景色 (白) */
+    padding: 15px 0; /* 下段の上下の余白 */
+}
+
+.header-container-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- 共通コンテナスタイル --- */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* 左右の余白 */
+}
+
+/* --- サイトロゴ (下段) --- */
+.site-logo a {
+    color: #343a40;
+    font-weight: bold;
+}
+.site-logo img { display: block; max-height: 45px; width: auto; }
+
+/* --- グローバルナビゲーション (下段) --- */
+.global-nav ul {
+    display: flex;
+    gap: 30px; /* メインメニュー項目間の隙間 */
+}
+.global-nav a {
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.global-nav a::after { /* ホバー下線 */
+    content: ''; position: absolute; bottom: -3px; left: 0;
+    width: 100%; height: 2px; background-color: #007bff;
+    transform: scaleX(0); transform-origin: center;
+    transition: transform 0.3s ease;
+}
+.global-nav a:hover,
+.global-nav a:focus {
+    color: #0056b3; outline: none;
+}
+.global-nav a:hover::after,
+.global-nav a:focus::after {
+    transform: scaleX(1);
+}
+
+/* --- (レスポンシブ用) ハンバーガーボタン --- */
+.hamburger-button { display: none; /* デフォルト非表示 */ }
+/* ハンバーガーボタンのスタイルは前の回答などを参照 */
+.hamburger-button {
+    background: none; border: none; cursor: pointer; padding: 10px;
+    width: 44px; height: 44px; position: relative; z-index: 110;
+}
+.hamburger-button span {
+    display: block; width: 24px; height: 3px; background-color: #333;
+    margin: 5px auto; transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- レスポンシブ対応 (例: 992px以下で切り替え) --- */
+@media (max-width: 992px) {
+    /* 下段のメインナビゲーションを非表示 */
+    .global-nav {
+        display: none;
+    }
+    /* ハンバーガーボタンを表示 */
+    .hamburger-button {
+        display: block;
+    }
+    /* 上段のレイアウト調整（例：中央揃えにするなど） */
+    .header-container-top {
+         justify-content: center; /* 上段も中央揃えにする場合 */
+    }
+     .header-info { /* 電話番号なども必要なら調整 */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+/* さらに狭い画面用の調整 (例: 576px以下) */
+@media (max-width: 576px) {
+    .header-top {
+        font-size: 0.75rem; /* 文字サイズをさらに小さく */
+        padding: 5px 0;
+    }
+    .sub-nav ul {
+        gap: 10px; /* リンク間の隙間を狭める */
+        justify-content: center;
+        width: 100%;
+    }
+    .header-main {
+        padding: 10px 0;
+    }
+    .site-logo h1 {
+        font-size: 1.5rem; /* ロゴサイズ調整 */
+    }
+}

@@ -1,0 +1,95 @@
+/* --- 基本設定とアイテムの見た目 --- */
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+h1, h2 {
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+}
+.grid-container {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 2em;
+    border-radius: 5px;
+}
+.grid-item {
+    background-color: #aed6f1;
+    color: #1b4f72;
+    padding: 20px;
+    border: 1px solid #5dade2;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- 例1: 固定カラム数 (3列) --- */
+.example-1 {
+    display: grid; /* Gridコンテナにする */
+
+    /* 列の定義: 1列目は1fr, 2列目は2fr, 3列目は1fr の比率で幅を分割 */
+    grid-template-columns: 1fr 2fr 1fr;
+
+    /* 行の定義 (任意): 各行の高さを指定 */
+    /* grid-template-rows: auto auto; */ /* 内容に合わせる（デフォルト） */
+    /* grid-template-rows: 100px 150px; */ /* 固定値 */
+    grid-auto-rows: minmax(80px, auto); /* 暗黙的な行の最小高さを80pxに */
+}
+
+/* --- 例2: アイテム間の隙間 (`gap`) --- */
+.example-2 {
+    display: grid;
+    /* 2列定義: 1fr は利用可能なスペースを等分割 */
+    grid-template-columns: 1fr 1fr;
+    /* 行と列の隙間をそれぞれ指定 */
+    /* row-gap: 20px; */
+    /* column-gap: 15px; */
+    /* 行と列の隙間をまとめて指定 */
+    gap: 15px; /* 縦横15pxの隙間 */
+    /* gap: 20px 10px; */ /* 縦20px, 横10pxの隙間 */
+}
+
+/* --- 例3: レスポンシブグリッド (`auto-fit`, `minmax`) --- */
+.example-3 {
+    display: grid;
+    /*
+     * repeat(): 繰り返しを指定
+     * auto-fit: コンテナ幅に合わせて列数を自動調整（スペースがあればアイテムを広げる）
+     * minmax(250px, 1fr): 各列の最小幅を250px、最大幅は利用可能なスペース(1fr)まで
+     */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+/* auto-fill: コンテナ幅に合わせて列数を自動調整（スペースがあってもアイテムを広げない） */
+/* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+
+
+/* --- 例4: 特定アイテムの配置 (`grid-column`, `grid-row`) --- */
+.example-4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列 */
+    grid-template-rows: repeat(3, auto); /* 3行 (高さ自動) */
+    gap: 10px;
+}
+
+/* 1列目から3列目まで結合 (grid-column-start / grid-column-end) */
+.item-span-col {
+    grid-column-start: 1;
+    grid-column-end: 4; /* 4の手前までなので、1,2,3列目 */
+    /* ショートハンド: grid-column: 1 / 4; */
+    /* ショートハンド: grid-column: span 3; (現在の位置から3列分) */
+    background-color: #f5cba7; /* 色を変えて分かりやすく */
+}
+
+/* 2行目から4行目まで結合 (grid-row-start / grid-row-end) */
+.item-span-row {
+    grid-row-start: 2;
+    grid-row-end: 4; /* 4の手前までなので、2,3行目 */
+    /* ショートハンド: grid-row: 2 / 4; */
+    /* ショートハンド: grid-row: span 2; (現在の位置から2行分) */
+    background-color: #d5f5e3; /* 色を変えて分かりやすく */
+    /* grid-column: 1; */ /* 必要なら列も指定 */
+}

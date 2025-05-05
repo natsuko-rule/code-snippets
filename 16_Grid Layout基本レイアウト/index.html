@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Grid Layout基本レイアウト</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Grid Layout 基本の例</h1>
+
+<h2>例1: 固定カラム数 (3列)</h2>
+<div class="grid-container example-1">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+    <div class="grid-item">Item 4</div>
+    <div class="grid-item">Item 5</div>
+    <div class="grid-item">Item 6</div>
+</div>
+
+<h2>例2: アイテム間の隙間 (`gap`)</h2>
+<div class="grid-container example-2">
+    <div class="grid-item">Item A</div>
+    <div class="grid-item">Item B</div>
+    <div class="grid-item">Item C</div>
+    <div class="grid-item">Item D</div>
+</div>
+
+<h2>例3: レスポンシブグリッド (`auto-fit`, `minmax`)</h2>
+<div class="grid-container example-3">
+    <div class="grid-item">Item Alpha</div>
+    <div class="grid-item">Item Beta</div>
+    <div class="grid-item">Item Gamma</div>
+    <div class="grid-item">Item Delta</div>
+    <div class="grid-item">Item Epsilon</div>
+    <div class="grid-item">Item Zeta</div>
+</div>
+
+<h2>例4: 特定アイテムの配置 (`grid-column`, `grid-row`)</h2>
+<div class="grid-container example-4">
+    <div class="grid-item item-span-col">Item Span Col (1-3)</div>
+    <div class="grid-item">Item Normal 1</div>
+    <div class="grid-item">Item Normal 2</div>
+    <div class="grid-item item-span-row">Item Span Row (2-4)</div>
+    <div class="grid-item">Item Normal 3</div>
+    <div class="grid-item">Item Normal 4</div>
+    <div class="grid-item">Item Normal 5</div>
+</div>
+
 </body>
 </html>

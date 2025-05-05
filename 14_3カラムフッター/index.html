@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>3カラムフッター</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- カラム1: ロゴ -->
+            <div class="footer-column footer-logo">
+                <h2><a href="/">サイトタイトル</a></h2>
+                <!-- 画像ロゴの場合 -->
+                <!-- <a href="/"><img src="footer-logo.png" alt="サイト名"></a> -->
+                <p class="footer-tagline">サイトの簡単な説明やタグラインなど。</p>
+            </div>
     
+            <!-- カラム2: ナビゲーション -->
+            <div class="footer-column footer-nav">
+                <h3>メニュー</h3>
+                <ul>
+                    <li><a href="/about/">私たちについて</a></li>
+                    <li><a href="/services/">サービス</a></li>
+                    <li><a href="/works/">制作実績</a></li>
+                    <li><a href="/privacy-policy/">プライバシーポリシー</a></li>
+                    <li><a href="/terms/">利用規約</a></li>
+                </ul>
+            </div>
+    
+            <!-- カラム3: お問い合わせボタン (CTA) -->
+            <div class="footer-column footer-cta">
+                <h3>お問い合わせ</h3>
+                <p>お気軽にご相談ください。</p>
+                <a href="/contact/" class="footer-button">お問い合わせはこちら</a>
+            </div>
+        </div>
+    
+        <!-- コピーライト -->
+        <div class="copyright-area">
+            <p class="copyright">
+                © 2024 サイト名 All Rights Reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
