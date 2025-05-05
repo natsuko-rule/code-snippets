@@ -1,0 +1,88 @@
+/* スクリーンリーダー向け非表示クラス */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ローディングスピナーの基本スタイル */
+.loader {
+    /* サイズ */
+    width: 48px;
+    height: 48px;
+
+    /* 円の軌道部分 (薄い色) */
+    border: 5px solid #f0f0f0; /* 軌道の色 */
+
+    /* 回転する部分 (濃い色) - border-topだけ色を変える */
+    border-top-color: #3498db; /* 回転部分の色 (青) */
+
+    /* 円形にする */
+    border-radius: 50%;
+
+    /* アニメーション */
+    animation: spin 1s linear infinite; /* 下で定義したspinアニメーションを適用 */
+
+    /* 配置（デモ用） */
+    margin: 30px 20px;
+}
+
+/* 回転アニメーションの定義 */
+@keyframes spin {
+    0% {
+      transform: rotate(0deg); /* 開始時: 0度 */
+    }
+    100% {
+      transform: rotate(360deg); /* 終了時: 360度回転 */
+    }
+}
+
+/* --- バリエーション --- */
+
+/* 大きめのスピナー */
+.loader-large {
+    width: 80px;
+    height: 80px;
+    border-width: 8px; /* ボーダーも太くする */
+}
+
+/* 緑色のスピナー */
+.loader-green {
+border-top-color: #2ecc71; /* 回転部分の色を緑に */
+}
+
+
+/* --- (オプション) 画面全体に表示するオーバーレイ --- */
+.loading-overlay {
+    position: fixed; /* 画面に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
+    display: flex; /* Flexboxで中央揃え */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* 他の要素より手前に */
+    /* 初期状態は非表示にしておき、JavaScriptで表示/非表示を制御することが多い */
+    /* display: none; */
+}
+
+/* オーバーレイ内のローダーのスタイル調整（任意） */
+.loading-overlay .loader {
+margin: 0; /* 中央揃えするのでマージンは不要 */
+}
+
+/*
+    JavaScript での表示/非表示の制御例：
+    // 表示
+    document.querySelector('.loading-overlay').style.display = 'flex';
+    // 非表示
+    document.querySelector('.loading-overlay').style.display = 'none';
+  */

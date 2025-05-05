@@ -1,0 +1,138 @@
+/* --- 基本設定 --- */
+body {
+    font-family: sans-serif;
+    background-color: #f4f7f6; /* ページの背景色 */
+    margin: 0;
+    padding: 20px;
+}
+h1 { text-align: center; margin-bottom: 1.5em; color: #333;}
+h2 { margin: 0; font-size: 1.2rem;}
+p { margin: 0; }
+a { text-decoration: none; color: #3498db; }
+
+/* --- カードコンテナ (Flexbox使用) --- */
+.card-container {
+    display: flex; /* Flexboxを有効化 */
+    flex-wrap: wrap; /* カードを折り返し表示 */
+    gap: 20px; /* カード間の隙間 */
+    justify-content: center; /* 中央揃え（オプション） */
+}
+
+/* --- カード --- */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 角丸と画像の収まりのため */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex; /* カード内を縦積み */
+    flex-direction: column;
+
+    /* カラム幅の計算 (例: 3カラムベース) */
+    /* gapの値を考慮: (100% - (gap * (カラム数 - 1))) / カラム数 */
+    flex-basis: calc((100% - 20px * 2) / 3); /* デフォルト3カラム */
+    flex-grow: 1; /* スペースが余る場合に広がる */
+    min-width: 280px; /* 最小幅（これ以下になると折り返す） */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* ホバー時に少し浮かせる */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- カード画像 --- */
+.card-image img {
+    display: block; /* 画像下の余白を削除 */
+    width: 100%; /* 親要素いっぱいに表示 */
+    height: auto; /* アスペクト比を維持 */
+    aspect-ratio: 300 / 200;
+    /* 高さを固定したい場合 */
+    /* height: 200px; */
+    /* object-fit: cover; */ /* 領域に合わせてトリミング */
+}
+
+/* --- カードコンテンツ --- */
+.card-content {
+    padding: 1.2em;
+    display: flex; /* フッターを常に下部に固定するため */
+    flex-direction: column;
+    flex-grow: 1; /* コンテンツエリアがカードの残りの高さを埋める */
+}
+
+.card-title {
+    margin-bottom: 0.5em;
+}
+.card-title a {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+.card-title a:hover {
+    color: #3498db;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    flex-grow: 1; /* テキストエリアが利用可能なスペースを埋める */
+    margin-bottom: 1em; /* フッターとの間の余白 */
+}
+
+/* --- カードフッター (ボタンや補足情報) --- */
+.card-footer {
+    margin-top: auto; /* テキストが伸びた後、最下部に配置 */
+    display: flex;
+    justify-content: space-between; /* ボタンと情報を両端に配置する場合 */
+    align-items: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+.card-button:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.card-info {
+    /* カテゴリや日付などのスタイル */
+}
+
+
+/* --- レスポンシブ対応 (メディアクエリ) --- */
+@media (max-width: 992px) {
+    .card {
+        /* 中間サイズ: 2カラム */
+        flex-basis: calc((100% - 20px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        /* 小さいサイズ: 1カラム */
+        flex-basis: 100%;
+    }
+    h1 { font-size: 1.8rem; }
+}
+
+/* --- (オプション) Grid Layout を使う場合 ---
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.card {
+    flex-basis と flex-grow は不要になります
+    min-widthも grid-template-columns で指定するため不要かも
+}
+*/

@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ハンバーガーメニュー</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    
+
+<header class="site-header">
+    <div class="header-container">
+        <h1 class="site-logo"><a href="#">サイトロゴ</a></h1>
+
+        <button class="hamburger-button" type="button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開閉する">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="global-nav" id="global-nav" aria-hidden="true">
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">サービス</a></li>
+                <li><a href="#">会社概要</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <p style="padding: 20px; min-height: 150vh;">コンテンツエリア（スクロール確認用）</p>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

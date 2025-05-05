@@ -1,0 +1,48 @@
+/* --- パンくずリスト --- */
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 1.5em;
+    color: #666;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 横並びにする */
+    flex-wrap: wrap; /* 幅が狭い場合に折り返す */
+    gap: 0.5em; /* 各項目間の隙間 */
+}
+
+.breadcrumbs li {
+    display: inline-flex; /* 区切り文字との縦位置揃えのため */
+    align-items: center;
+}
+
+/* 区切り文字 (例: > ) */
+.breadcrumbs li:not(:first-child)::before {
+    content: ">"; /* 区切り文字 */
+    margin-right: 0.5em; /* 文字の右に余白 */
+    color: #aaa; /* 区切り文字の色 */
+    display: inline-block; /* 幅やマージンを有効に */
+    /* font-family: 'Font Awesome 5 Free'; font-weight: 900; content: "\f105"; などでアイコンフォントも可 */
+}
+
+.breadcrumbs a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* 現在地 (リンクなしの項目) */
+.breadcrumbs li[aria-current="page"] {
+    font-weight: bold;
+    color: #333;
+}

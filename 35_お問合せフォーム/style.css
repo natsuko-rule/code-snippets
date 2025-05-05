@@ -1,0 +1,146 @@
+/* --- 基本的なスタイルリセット（任意） --- */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #444;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 2em;
+    color: #555;
+}
+
+/* --- フォーム全体のスタイル --- */
+.contact-form {
+    max-width: 600px; /* フォームの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- フォームグループ（ラベルと入力欄のセット） --- */
+.form-group {
+    margin-bottom: 1.5em; /* 各項目の下の余白 */
+}
+
+/* --- ラベル --- */
+.form-label {
+    display: block; /* ラベルをブロック要素にして入力欄の上に配置 */
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #555;
+}
+
+/* --- 必須マーク (*) --- */
+.required {
+    color: #e74c3c; /* 赤色 */
+    font-weight: bold;
+    margin-left: 0.2em;
+}
+
+/* --- 入力欄 (input[type=text], input[type=email], input[type=tel], textarea) --- */
+.form-input,
+.form-textarea {
+    display: block; /* 幅100%にするため */
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; /* paddingとborderをwidthに含める */
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #3498db; /* フォーカス時の枠線の色 */
+    outline: none; /* デフォルトのアウトラインを消す */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* --- テキストエリア --- */
+.form-textarea {
+    resize: vertical; /* 縦方向のリサイズのみ許可 */
+    min-height: 100px;
+}
+
+/* --- ラジオボタングループ --- */
+.radio-group label {
+    display: inline-block; /* ラジオボタンとテキストを横並び */
+    margin-right: 1.5em;
+    margin-bottom: 0.5em; /* 縦に並ぶ場合の余白 */
+    font-weight: normal;
+    cursor: pointer;
+}
+.radio-group input[type="radio"] {
+    margin-right: 0.4em;
+    vertical-align: middle; /* テキストとの縦位置調整 */
+}
+
+
+/* --- プライバシーポリシー同意 --- */
+.privacy-policy label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex; /* チェックボックスとテキストの縦位置を揃えやすくする */
+    align-items: center;
+}
+.privacy-policy input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+.privacy-policy a {
+    color: #3498db;
+    text-decoration: none;
+}
+.privacy-policy a:hover {
+    text-decoration: underline;
+}
+
+/* --- 送信ボタンのグループ --- */
+.form-submit {
+    text-align: center; /* ボタンを中央寄せ */
+    margin-top: 2em;
+}
+
+/* --- 送信ボタン --- */
+.submit-button {
+    padding: 0.8em 2em;
+    background-color: #3498db; /* ボタンの背景色 */
+    color: white; /* 文字色 */
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+    background-color: #2980b9; /* ホバー時の背景色 */
+}
+
+.submit-button:active {
+    background-color: #2471a3; /* クリック時の背景色 */
+    transform: scale(0.98); /* 少し小さくする */
+}
+
+/* --- 簡単なレスポンシブ対応 --- */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 1.5em;
+    }
+    body {
+        margin: 0; /* スマホ表示で左右の余白をなくす */
+    }
+}

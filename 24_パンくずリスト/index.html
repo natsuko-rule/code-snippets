@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>パンくずリスト</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div style="padding: 20px;">
+        <h1>ページタイトル (例: 商品詳細)</h1>
     
+        <nav class="breadcrumbs" aria-label="パンくずリスト">
+            <ol>
+                <li><a href="/">ホーム</a></li>
+                <li><a href="/products/">商品一覧</a></li>
+                <li><a href="/products/category-a/">カテゴリA</a></li>
+                <li aria-current="page">商品名XYZ</li> <!-- 現在地はリンクなし & aria-current -->
+            </ol>
+        </nav>
+    
+        <p>コンテンツ本文...</p>
+    </div>
 </body>
 </html>

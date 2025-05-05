@@ -1,0 +1,46 @@
+/* --- 基本的な定義リストのスタイル --- */
+.basic-definition-list {
+    margin-top: 1.5em; /* リストの上の余白 */
+    margin-bottom: 1.5em; /* リストの下の余白 */
+    padding-left: 0; /* デフォルトのpaddingをリセット */
+    line-height: 1.7; /* 行間を少し広げる */
+}
+
+/* --- 定義用語 (dt) のスタイル --- */
+.basic-definition-list dt {
+    font-weight: bold; /* 用語を太字に */
+    margin-top: 1em; /* 各用語の上の余白 */
+    color: #333;
+}
+/* 最初のdtの上余白は不要な場合 */
+.basic-definition-list dt:first-of-type {
+    margin-top: 0;
+}
+
+
+/* --- 定義説明 (dd) のスタイル --- */
+.basic-definition-list dd {
+    margin-left: 1.5em; /* 説明文をインデント */
+    margin-bottom: 1em; /* 説明文の下の余白 */
+    color: #555;
+}
+/* 最後のddの下余白は不要な場合（リスト全体のmargin-bottomで調整するため） */
+.basic-definition-list dd:last-of-type {
+    margin-bottom: 0;
+}
+
+/* --- Q&A形式用の追加スタイル（任意） --- */
+.qa-style dt {
+    background-color: #f0f0f0; /* 質問の背景色 */
+    padding: 0.5em 1em;
+    border-left: 4px solid #3498db; /* 左側にアクセント線 */
+}
+
+.qa-style dd {
+    padding: 0.5em 1em 0.5em 0; /* 説明のパディング調整 */
+    margin-left: 1.5em; /* インデントは基本スタイルを継承 */
+    border-bottom: 1px dotted #ccc; /* 回答の下に点線 */
+}
+.qa-style dd:last-of-type {
+    border-bottom: none; /* 最後の回答の下線は消す */
+}

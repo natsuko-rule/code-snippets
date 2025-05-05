@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>スライダー</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="slider-container" id="mySlider">
+        <div class="slider-wrapper">
+            <ul class="slider-list">
+                <li class="slider-item"><img src="./img/sample01.webp" alt="スライド1"></li>
+                <li class="slider-item"><img src="./img/sample02.webp" alt="スライド2"></li>
+                <li class="slider-item"><img src="./img/sample03.webp" alt="スライド3"></li>
+                <li class="slider-item"><img src="./img/sample04.jpeg" alt="スライド4"></li>
+                <!-- スライド項目を追加する場合はここに追加 -->
+            </ul>
+        </div>
     
+        <!-- ナビゲーションボタン -->
+        <button class="slider-button prev" type="button" aria-label="前のスライドへ"><</button>
+        <button class="slider-button next" type="button" aria-label="次のスライドへ">></button>
+    
+        <!-- ページネーション (オプション) -->
+        <div class="slider-pagination">
+            <!-- ドットはJavaScriptで生成 -->
+        </div>
+    </div>
 </body>
 </html>

@@ -3,10 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>手動で作る目次</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <article>
+        <h1>ページのメインタイトル</h1>
+        <!-- 目次セクション -->
+        <nav class="toc" aria-labelledby="toc-title">
+            <h2 id="toc-title" class="toc-title">目次</h2>
+            <ol class="toc-list">
+                <li>
+                <a href="#section1">最初のセクション</a>
+                <ul> <!-- ネストされたリスト（サブセクション用） -->
+                    <li><a href="#section1-1">サブセクション 1-1</a></li>
+                    <li><a href="#section1-2">サブセクション 1-2</a></li>
+                </ul>
+                </li>
+                <li><a href="#section2">二番目のセクション</a></li>
+                <li><a href="#section3">三番目のセクション</a></li>
+            </ol>
+        </nav>
+        <!-- / 目次セクション -->
+        <p>ここに導入文などが入ります。</p>
+        <!-- 各セクション -->
+        <section id="section1">
+            <h2>最初のセクション</h2>
+            <p>ここにセクション1の内容が入ります。</p>
+            <h3 id="section1-1">サブセクション 1-1</h3>
+            <p>サブセクション1-1の内容。</p>
+        
+            <h3 id="section1-2">サブセクション 1-2</h3>
+            <p>サブセクション1-2の内容。</p>
+        </section>
+
+        <section id="section2">
+            <h2 id="section2">二番目のセクション</h2>
+            <p>ここにセクション2の内容が入ります。</p>
+        </section>
     
+        <section id="section3">
+            <h2 id="section3">三番目のセクション</h2>
+            <p>ここにセクション3の内容が入ります。</p>
+        </section>
+    </article>
 </body>
 </html>

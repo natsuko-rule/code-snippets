@@ -1,0 +1,17 @@
+.accordion[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.accordion p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: .4em 2.5em 2em;
+    color: #333333;
+    transition: transform .4s, opacity .4s;
+}
+
+.accordion[open] p {
+    transform: none;
+    opacity: 1;
+}

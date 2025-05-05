@@ -3,11 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>JSによるアコーディオン</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <h1>よくある質問 (アコーディオン)</h1>
+
+<div class="accordion-container">
+    <!-- アコーディオン項目 1 -->
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="accordion-header-1">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="accordion-content-1">
+                質問1: サービスを利用するにはどうすればいいですか？
+                <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+        </h3>
+        <div class="accordion-content" role="region" aria-labelledby="accordion-header-1" id="accordion-content-1" hidden>
+            <div class="accordion-content-inner">
+                <p>回答1: まずは、当ウェブサイトの<a href="#">お問い合わせフォーム</a>からご連絡いただくか、お電話にてご相談ください。担当者より折り返しご連絡させていただきます。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- アコーディオン項目 2 -->
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="accordion-header-2">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="accordion-content-2">
+                質問2: 料金体系について教えてください。
+                <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+        </h3>
+        <div class="accordion-content" role="region" aria-labelledby="accordion-header-2" id="accordion-content-2" hidden>
+            <div class="accordion-content-inner">
+                <p>回答2: 料金はプランによって異なります。詳細については<a href="#">料金ページ</a>をご確認ください。ご要望に応じて個別のお見積もりも可能です。</p>
+                <ul>
+                    <li>プランA: 月額〇〇円</li>
+                    <li>プランB: 月額〇〇円</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- アコーディオン項目 3 -->
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="accordion-header-3">
+            <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="accordion-content-3">
+                質問3: 対応エリアはどこですか？
+                <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+        </h3>
+        <div class="accordion-content" role="region" aria-labelledby="accordion-header-3" id="accordion-content-3" hidden>
+            <div class="accordion-content-inner">
+                <p>回答3: 現在、日本全国に対応しております。一部離島など、地域によっては別途交通費等が発生する場合がございますので、詳しくはお問い合わせください。</p>
+            </div>
+        </div>
+    </div>
+    <!-- 他の項目も同様に追加 -->
+
+</div><!-- /.accordion-container -->
 </body>
 </html>

@@ -3,10 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>順序付きリスト</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- シンプルな順序付きリスト -->
+    <h2>簡単なレシピの手順</h2>
+    <ol class="basic-ordered-list">
+        <li>材料を準備します。</li>
+        <li>野菜をカットします。</li>
+        <li>鍋で炒めます。</li>
+        <li>調味料を加えます。</li>
+        <li>盛り付けて完成です。</li>
+    </ol>
+    <!-- リストの中にリスト -->
+    <h2>プロジェクトのアウトライン</h2>
+    <ol class="basic-ordered-list">
+        <li>計画フェーズ
+            <ol>
+                <li>要件定義</li>
+                <li>スケジュール作成</li>
+            </ol>
+        </li>
+        <li>設計フェーズ
+            <ol>
+                <li>基本設計</li>
+                <li>詳細設計</li>
+            </ol>
+        </li>
+        <li>実装フェーズ</li>
+        <li>テストフェーズ</li>
+    </ol>
+    <!-- 番号の種類を変更
+- type="1": 数字 (デフォルト)
+- type="a": 小文字アルファベット (a, b, c, ...)
+- type="A": 大文字アルファベット (A, B, C, ...)
+- type="i": 小文字ローマ数字 (i, ii, iii, ...)
+- type="I": 大文字ローマ数字 (I, II, III, ...) -->
+    <h3>アルファベット (小文字)</h3>
+    <ol type="a" class="basic-ordered-list">
+        <li>項目A</li>
+        <li>項目B</li>
+        <li>項目C</li>
+    </ol>
+
+    <h3>ローマ数字 (大文字)</h3>
+    <ol type="I" class="basic-ordered-list">
+        <li>第一章</li>
+        <li>第二章</li>
+        <li>第三章</li>
+    </ol>
+    <!-- 開始の番号を変更
+    reserved属性を指定することで数字が逆順序になる -->
+    <h2>ランキング (トップ3)</h2>
+    <!-- reversed属性を追加し、start属性は項目の数(3)を指定 -->
+    <ol reversed start="3" class="basic-ordered-list">
+        <li>銅メダル</li> <!-- HTML上で最初に書かれたものが、start値 (3) になる -->
+        <li>銀メダル</li> <!-- 次が 2 -->
+        <li>金メダル</li> <!-- 最後が 1 -->
+    </ol>
 </body>
 </html>

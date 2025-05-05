@@ -1,0 +1,52 @@
+/* 基本的なリセットとページ全体のスタイル（任意） */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* ページトップボタンのスタイル */
+.page-top-button {
+    /* 位置 */
+    position: fixed; /* 画面に固定 */
+    bottom: 30px;    /* 下から30px */
+    right: 30px;     /* 右から30px */
+    z-index: 100;    /* 他の要素より手前に表示 */
+
+    /* 見た目 */
+    display: flex;          /* アイコン/テキストを中央揃え */
+    justify-content: center;
+    align-items: center;
+    width: 50px;            /* ボタンの幅 */
+    height: 50px;           /* ボタンの高さ */
+    background-color: rgba(0, 123, 255, 0.8); /* 背景色 (半透明の青) */
+    color: #fff;            /* アイコン/テキストの色 (白) */
+    text-decoration: none;  /* aタグの下線を消す */
+    border-radius: 50%;     /* 円形にする */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 影をつける */
+
+    /* 最初は非表示 */
+    opacity: 0;
+    visibility: hidden; /* アクセシビリティのためopacityと併用 */
+    transform: translateY(20px); /* 少し下から現れるアニメーション */
+
+    /* 表示/非表示のアニメーション */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* ボタンの表示状態 (.is-visible クラスが付いた時) */
+.page-top-button.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* 元の位置に戻る */
+}
+
+/* ホバー時のスタイル */
+.page-top-button:hover {
+    background-color: rgba(0, 86, 179, 0.9); /* 少し濃い色に */
+}
+
+/* アイコンのサイズ調整（SVGの場合） */
+.page-top-button svg {
+    width: 60%; /* ボタンサイズに対する割合 */
+    height: 60%;
+}

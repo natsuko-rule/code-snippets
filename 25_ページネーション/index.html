@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ページネーション</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div style="padding: 20px;">
+        <h2>記事一覧</h2>
+        <!-- ここに記事リストなどが入る -->
+        <div style="min-height: 300px; border: 1px dashed #ccc; margin-bottom: 2em; display:flex; align-items:center; justify-content:center;">記事リストエリア</div>
     
+        <nav class="pagination" aria-label="ページネーション">
+            <ul>
+                <!-- 前へボタン (最初のページでは非表示 or disabled) -->
+                <!-- <li class="page-item disabled"><span class="page-link">« 前へ</span></li> -->
+                <li class="page-item"><a href="?page=1" class="page-link" aria-label="前のページへ">« 前へ</a></li>
+    
+                <!-- ページ番号 -->
+                <li class="page-item"><a href="?page=1" class="page-link">1</a></li>
+                <li class="page-item active" aria-current="page"><span class="page-link">2</span></li> <!-- 現在ページ -->
+                <li class="page-item"><a href="?page=3" class="page-link">3</a></li>
+                <li class="page-item"><a href="?page=4" class="page-link">4</a></li>
+                <li class="page-item"><a href="?page=5" class="page-link">5</a></li>
+                <li class="page-item disabled"><span class="page-link">…</span></li> <!-- 省略記号 -->
+                <li class="page-item"><a href="?page=10" class="page-link">10</a></li>
+    
+                <!-- 次へボタン (最後のページでは非表示 or disabled) -->
+                <li class="page-item"><a href="?page=3" class="page-link" aria-label="次のページへ">次へ »</a></li>
+                <!-- <li class="page-item disabled"><span class="page-link">次へ »</span></li> -->
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>

@@ -1,0 +1,126 @@
+/* ステップバー全体のコンテナ */
+.step-bar-container {
+    width: 100%;
+    max-width: 700px; /* 最大幅はお好みで調整 */
+    margin: 30px auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右に少し余白 */
+    box-sizing: border-box;
+}
+
+/* ステップバー本体 (ol要素) */
+.step-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* ステップを横並びに */
+    justify-content: space-between; /* 項目間のスペースを均等に */
+    position: relative; /* 線の位置決めの基準 */
+}
+
+/* 各ステップ (li要素) */
+.step-item {
+    flex: 1; /* 各ステップが均等な幅を持つように */
+    text-align: center; /* テキストを中央揃え */
+    position: relative; /* 線の位置決めの基準 */
+    padding-top: 45px; /* 番号との間にスペースを作る */
+    color: #aaa; /* 未完了ステップのデフォルト色 */
+}
+
+/* ステップの内容（番号と名前をまとめる） */
+.step-content {
+position: relative; /* 番号の位置決めの基準 */
+}
+
+/* ステップ番号 (円) */
+.step-number {
+    display: inline-flex; /* 中央揃えのため */
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* 円形にする */
+    border: 2px solid #ccc; /* 未完了の枠線 */
+    background-color: #fff; /* 背景色 */
+    color: #aaa; /* 未完了の番号の色 */
+    font-weight: bold;
+    font-size: 0.9em;
+    position: absolute; /* 位置調整のため */
+    top: -40px; /* step-itemのpadding-top分上に */
+    left: 50%;
+    transform: translateX(-50%); /* 中央揃え */
+    z-index: 1; /* 線より手前に表示 */
+}
+
+/* ステップ名 */
+.step-name {
+    display: block; /* 改行させる */
+    font-size: 0.85em;
+    margin-top: 5px;
+}
+
+/* ステップ間の線 (::beforeで描画) */
+.step-item::before {
+    content: "";
+    position: absolute;
+    top: -25px; /* ステップ番号の垂直中央あたり */
+    left: -50%; /* 左隣のステップの中間から */
+    width: 100%; /* 右隣のステップの中間まで */
+    height: 2px; /* 線の太さ */
+    background-color: #ccc; /* 未完了の線の色 */
+    z-index: 0; /* 番号より奥に表示 */
+}
+
+/* 最初のステップの左側の線を消す */
+.step-item:first-child::before {
+    display: none;
+}
+
+/* --- 状態に応じたスタイル --- */
+
+/* 完了したステップ (.completed) */
+.step-item.completed {
+    color: #333; /* 完了ステップの文字色 */
+}
+
+.step-item.completed .step-number {
+    border-color: #28a745; /* 完了した枠線の色 (緑) */
+    background-color: #28a745; /* 完了した背景色 (緑) */
+    color: #fff; /* 完了した番号の色 (白) */
+}
+
+/* 完了したステップから次のステップへの線 */
+.step-item.completed::before {
+    background-color: #28a745; /* 完了した線の色 (緑) */
+}
+
+/* 現在のステップ (.active) */
+.step-item.active {
+    color: #007bff; /* 現在のステップの文字色 (青) */
+    font-weight: bold;
+}
+
+.step-item.active .step-number {
+    border-color: #007bff; /* 現在の枠線の色 (青) */
+    color: #007bff; /* 現在の番号の色 (青) */
+    /* background-color: #fff; */ /* 背景は白のままにするか、色をつけるかはお好みで */
+    transform: translateX(-50%) scale(1.1); /* 少し大きくして目立たせる */
+}
+
+/* 現在のステップより前の線は完了色にする */
+.step-item.active::before {
+     background-color: #28a745; /* 現在のステップの左側の線は完了色 */
+}
+
+/* --- ホバー効果（任意） --- */
+.step-item:hover .step-name {
+    color: #000;
+}
+.step-item:hover .step-number {
+    border-color: #888;
+}
+.step-item.completed:hover .step-number {
+     border-color: #1e7e34; /* 濃い緑 */
+}
+.step-item.active:hover .step-number {
+     border-color: #0056b3; /* 濃い青 */
+}

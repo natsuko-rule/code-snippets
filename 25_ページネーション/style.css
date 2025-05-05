@@ -1,0 +1,80 @@
+/* --- ページネーション --- */
+.pagination {
+    display: flex; /* 中央揃えのため */
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex; /* ボタンを横並びにする */
+    border-radius: 5px;
+    overflow: hidden; /* 角丸のため */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.page-item {
+    /* 各アイテム間の区切り線 (オプション) */
+    /* border-right: 1px solid #dee2e6; */
+}
+/* .page-item:last-child {
+    border-right: none;
+} */
+
+.page-link {
+    display: block;
+    padding: 0.6em 1em;
+    color: #007bff;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    margin-left: -1px; /* 枠線を重ねる */
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+.page-item:first-child .page-link { /* 左端の角丸 */
+    margin-left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.page-item:last-child .page-link { /* 右端の角丸 */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.page-link:hover,
+.page-link:focus {
+    color: #0056b3;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    outline: none;
+    z-index: 2; /* ホバー時に手前に */
+    position: relative;
+}
+
+/* 現在のページ */
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    z-index: 3; /* 最も手前に */
+    position: relative;
+    cursor: default; /* クリックできないことを示す */
+}
+
+/* 無効化された項目 */
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none; /* クリックイベントを無効化 */
+    background-color: #fff;
+    border-color: #dee2e6;
+    cursor: default;
+}
+.page-item.disabled .page-link:hover { /* ホバースタイルを無効化 */
+    background-color: #fff;
+    color: #6c757d;
+}

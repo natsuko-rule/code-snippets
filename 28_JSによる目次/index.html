@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>JSによる目次</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <article id="main-content"> <!-- 見出しが含まれる範囲を特定しやすくする -->
+        <h1>ページのメインタイトル</h1>
     
+        <!-- 目次はこの要素の中に自動生成される -->
+        <nav class="toc" aria-labelledby="toc-title">
+            <h2 id="toc-title" class="toc-title">目次</h2>
+            <div id="toc-list-container"></div> <!-- JavaScriptでリストを挿入する場所 -->
+        </nav>
+
+        <p>ここに導入文などが入ります。</p>
+    
+        <!-- 各セクション (IDは自動付与されることもある) -->
+        <section>
+            <h2>最初のセクション</h2>
+            <p>ここにセクション1の内容が入ります。</p>
+        
+            <h3>サブセクション 1-1</h3>
+            <p>サブセクション1-1の内容。</p>
+        
+            <h3>サブセクション 1-2</h3>
+            <p>サブセクション1-2の内容。</p>
+        </section>
+    
+        <section>
+            <h2>二番目のセクション</h2>
+            <p>ここにセクション2の内容が入ります。</p>
+        </section>
+        <!-- ... -->
+    </article>
 </body>
 </html>

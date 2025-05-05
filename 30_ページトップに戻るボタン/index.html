@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ページトップに戻るボタン</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+        <!-- ページのコンテンツ（十分な高さを持たせる） -->
+    <header>
+        <h1>ページのタイトル</h1>
+        <p>下にスクロールしてください...</p>
+    </header>
+    <main style="height: 2000px; background: linear-gradient(to bottom, #e9f7ef, #aed9c0, #74b79a); padding: 20px;">
+        <p>ここはメインコンテンツです。</p>
+        <p>...</p>
+        <p>...</p>
+        <p>ページの途中...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>さらに下へ...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>もうすぐ一番下です。</p>
+    </main>
+    <footer>
+        <p>© 2023 フッター</p>
+    </footer>
+    <!-- / ページのコンテンツ -->
+
+
+    <!-- ページトップへ戻るボタン -->
+    <a href="#" id="pageTopButton" class="page-top-button" aria-label="ページトップへ戻る">
+        <!-- 上向き矢印アイコン（SVGの例） -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+        </svg>
+        <!-- テキストで表示する場合 -->
+        <!-- TOP -->
+    </a>
 </body>
 </html>

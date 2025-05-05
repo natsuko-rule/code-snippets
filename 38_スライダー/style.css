@@ -1,0 +1,104 @@
+/* --- スライダーコンテナ --- */
+.slider-container {
+    max-width: 600px; /* スライダーの最大幅（画像サイズに合わせるか任意に設定） */
+    margin: 2em auto; /* 中央寄せ */
+    position: relative; /* ボタンとページネーションの配置基準 */
+    overflow: hidden; /* はみ出したボタンなどを隠す場合 */
+    background-color: #eee; /* 背景色（画像の読み込み中など） */
+}
+
+/* --- スライド表示領域 --- */
+.slider-wrapper {
+    overflow: hidden; /* 横にはみ出したスライドを隠す */
+}
+
+/* --- スライドリスト (ul) --- */
+.slider-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* スライド項目を横並びにする */
+    /* transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0); */ /* アニメーション */
+    transition: transform 0.4s ease-in-out; /* スムーズなアニメーション */
+}
+
+/* --- スライド項目 (li) --- */
+.slider-item {
+    flex-shrink: 0; /* スライドが縮まないようにする */
+    width: 100%; /* コンテナ幅いっぱいに表示 */
+    box-sizing: border-box; /* paddingやborderを含めて幅計算 */
+}
+
+.slider-item img {
+    display: block; /* 画像下の余白をなくす */
+    width: 100%; /* 親要素いっぱいに表示 */
+    height: auto; /* アスペクト比を維持 */
+    max-height: 400px; /* 最大高さを指定（任意） */
+    object-fit: cover; /* 画像をトリミングして表示する場合（任意） */
+}
+
+/* --- ナビゲーションボタン (共通) --- */
+.slider-button {
+    position: absolute; /* コンテナ基準で絶対配置 */
+    top: 50%;
+    transform: translateY(-50%); /* 上下中央に配置 */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5em 0.8em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 4px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.slider-button:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ボタンの無効状態 */
+.slider-button.disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none; /* クリックイベントを無効化 */
+}
+
+/* 前へボタン */
+.slider-button.prev {
+    left: 10px;
+}
+
+/* 次へボタン */
+.slider-button.next {
+    right: 10px;
+}
+
+/* --- ページネーション (オプション) --- */
+.slider-pagination {
+    position: absolute; /* コンテナ基準で絶対配置 */
+    bottom: 15px; /* 下からの位置 */
+    left: 50%;
+    transform: translateX(-50%); /* 水平中央に配置 */
+    z-index: 10;
+    display: flex; /* ドットを横並びに */
+    gap: 8px; /* ドット間の隙間 */
+}
+
+.pagination-dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6); /* ドットの色 */
+    border-radius: 50%; /* 円形にする */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* アクティブなドットのスタイル */
+.pagination-dot.active {
+    background-color: rgba(255, 255, 255, 1); /* アクティブ時の色 */
+    transform: scale(1.2); /* 少し大きくする */
+}

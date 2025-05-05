@@ -1,0 +1,84 @@
+/* 最初のセクションのスタイル（例） */
+.hero-section {
+    height: 100vh; /* ビューポートの高さ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #aed9c0; /* 背景色例 */
+    position: relative; /* 矢印の位置決めの基準 */
+    text-align: center;
+}
+
+/* スクリーンリーダー向け非表示クラス */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* スクロールダウン矢印のコンテナ (a タグ) */
+.scroll-down-arrow {
+    position: absolute; /* 親要素(.hero-section)を基準に配置 */
+    bottom: 30px;     /* 下から30px */
+    left: 50%;        /* 左から50% */
+    transform: translateX(-50%); /* 中央揃え */
+    width: 24px;      /* クリック領域の幅 */
+    height: 50px;     /* クリック領域の高さ */
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* 矢印のアニメーション定義 */
+@keyframes bounce-arrow {
+    0%, 100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(-45deg);
+    }
+}
+
+/* 矢印の本体（疑似要素で作成） */
+.scroll-down-arrow::before,
+.scroll-down-arrow::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    background-color: #fff; /* 矢印の色 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* 影（任意）*/
+}
+
+/* 矢印の棒部分 */
+.scroll-down-arrow::before {
+    width: 2px;       /* 棒の太さ */
+    height: 30px;     /* 棒の長さ */
+    top: 0;
+    margin-left: -1px; /* 幅の半分左にずらす */
+    /* アニメーションを適用 */
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* 矢印の先端（V字） - 左半分 */
+.scroll-down-arrow::after {
+    width: 2px;
+    height: 12px; /* 先端の長さ */
+    top: 22px; /* 棒の先端に合わせる */
+    margin-left: -4px; /* 位置調整 */
+    transform: rotate(-45deg); /* 傾ける */
+    transform-origin: top left;
+    left: 8px;
+     /* アニメーションを適用 */
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* コンテンツセクションのスタイル（例） */
+.content-section {
+    padding: 50px 20px;
+}

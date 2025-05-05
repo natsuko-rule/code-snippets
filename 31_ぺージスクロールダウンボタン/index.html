@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ぺージスクロールダウンボタン</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <!-- 最初のセクション（ビューポートいっぱいなど） -->
+    <section class="hero-section">
+        <h1>最初のセクション</h1>
+        <p>下にスクロールしてください</p>
+
+        <!-- スクロールダウン矢印 -->
+        <a href="#next-section" class="scroll-down-arrow" aria-label="次のセクションへスクロール">
+        <!-- CSSで矢印を描画するため空要素 or screen reader 用テキスト -->
+        <span class="visually-hidden">次のセクションへ</span>
+        </a>
+    <!-- / スクロールダウン矢印 -->
+    </section>
+
+    <!-- 次のセクション -->
+    <section id="next-section" class="content-section">
+        <h2>次のセクション</h2>
+        <p>ここがコンテンツの始まりです。</p>
+        <!-- 長いコンテンツ -->
+        <div style="height: 1000px; background-color: #f0f0f0; margin-top: 20px;"></div>
+    </section>
 </body>
 </html>

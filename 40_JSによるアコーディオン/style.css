@@ -1,0 +1,109 @@
+/* --- アコーディオンコンテナ --- */
+.accordion-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden; /* 角丸のため */
+}
+
+/* --- アコーディオン項目 --- */
+.accordion-item {
+    border-bottom: 1px solid #ccc; /* 項目間の区切り線 */
+}
+.accordion-item:last-child {
+    border-bottom: none; /* 最後の項目の線は不要 */
+}
+
+/* --- アコーディオンヘッダー/トリガーボタン --- */
+.accordion-header {
+    /* 見出し自体のスタイルは最小限に */
+}
+.accordion-trigger {
+    display: flex; /* アイコンとテキストを横並び */
+    justify-content: space-between; /* テキストを左、アイコンを右へ */
+    align-items: center;
+    width: 100%;
+    padding: 1em 1.2em;
+    background-color: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    text-align: left; /* テキストを左揃え */
+    font-size: inherit; /* 親（h3など）のフォントサイズを継承 */
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+.accordion-trigger:hover,
+.accordion-trigger:focus {
+    background-color: #e9e9e9;
+    outline: none; /* 必要なら独自のフォーカススタイルを追加 */
+}
+
+/* --- 開閉アイコン --- */
+.accordion-icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    border: 2px solid currentColor; /* ボタンの文字色と同じ */
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* 幅が狭くなっても縮まない */
+    margin-left: 1em; /* テキストとの間隔 */
+}
+/* アイコンの「＋」マーク */
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: currentColor;
+    transition: transform 0.3s ease;
+}
+.accordion-icon::before { /* 縦棒 */
+    width: 2px;
+    height: 60%;
+    transform: translate(-50%, -50%);
+}
+.accordion-icon::after { /* 横棒 */
+    width: 60%;
+    height: 2px;
+    transform: translate(-50%, -50%);
+}
+
+/* 開いた状態のアイコン（「ー」マーク） */
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg); /* アイコン全体を回転（例） */
+}
+/* 横棒を非表示にする（別の表現方法） */
+/* .accordion-trigger[aria-expanded="true"] .accordion-icon::after {
+    transform: translate(-50%, -50%) scaleX(0);
+} */
+
+
+/* --- アコーディオンコンテンツ --- */
+.accordion-content {
+    overflow: hidden; /* はみ出した内容を隠す */
+    max-height: 0; /* 初期状態は高さを0に */
+    visibility: hidden; /* JSなしでもアクセスできないように */
+    transition: max-height 0.4s cubic-bezier(0.65, 0, 0.35, 1), /* 高さの変化 */
+                visibility 0s 0.4s; /* 高さ変化が終わってから隠す/表示 */
+    background-color: #fff;
+}
+/* 開いた状態のコンテンツ */
+.accordion-trigger[aria-expanded="true"] + .accordion-content {
+    /* max-height: 500px; */ /* 固定値でも良いが、内容量に注意 */
+    /* JSで動的に高さを設定する場合はCSSでのmax-height指定は不要or大きな値に */
+    visibility: visible;
+    transition: max-height 0.4s cubic-bezier(0.65, 0, 0.35, 1),
+                visibility 0s 0s; /* 開くときはすぐに表示 */
+}
+
+/* コンテンツ内部のパディングなど */
+.accordion-content-inner {
+    padding: 1.2em 1.5em;
+    line-height: 1.7;
+}
+.accordion-content-inner p:first-child { margin-top: 0; }
+.accordion-content-inner p:last-child { margin-bottom: 0; }
+.accordion-content-inner ul { margin-top: 0.5em; padding-left: 1.2em;}

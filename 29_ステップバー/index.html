@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ステップバー</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="step-bar-container">
+        <ol class="step-bar">
+            <!-- 完了したステップ -->
+            <li class="step-item completed">
+                <div class="step-content">
+                <span class="step-number">1</span>
+                <span class="step-name">情報入力</span>
+            </div>
+            </li>
+            <!-- 現在のステップ -->
+            <li class="step-item active">
+                <div class="step-content">
+                <span class="step-number">2</span>
+                <span class="step-name">内容確認</span>
+                </div>
+            </li>
+            <!-- 未完了のステップ -->
+            <li class="step-item">
+                <div class="step-content">
+                <span class="step-number">3</span>
+                <span class="step-name">送信完了</span>
+                </div>
+            </li>
+            <!-- 未完了のステップ (例) -->
+            <li class="step-item">
+                <div class="step-content">
+                <span class="step-number">4</span>
+                <span class="step-name">最終処理</span>
+            </div>
+            </li>
+        </ol>
+    </div>
 </body>
 </html>

@@ -1,0 +1,72 @@
+/* --- テーブルコンテナ（レスポンシブ対応） --- */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* テーブルがはみ出した場合に横スクロールバーを表示 */
+    margin-bottom: 1.5em; /* テーブル下の余白 */
+    -webkit-overflow-scrolling: touch; /* iOSでの慣性スクロール */
+}
+
+/* --- 基本的なテーブルスタイル --- */
+.basic-table {
+    width: 100%; /* コンテナ幅に合わせる */
+    min-width: 600px; /* テーブルの最小幅（これ以下で横スクロール） */
+    border-collapse: collapse; /* 罫線を1本線にする */
+    border-spacing: 0;
+    border: 1px solid #ccc; /* 外枠の線 */
+    font-size: 0.9rem; /* 文字サイズ */
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* --- キャプション（表タイトル） --- */
+.basic-table caption {
+    caption-side: bottom; /* キャプションをテーブルの下に表示（上にしたい場合は top） */
+    text-align: left;
+    padding: 0.8em 0.5em;
+    font-size: 0.85rem;
+    color: #666;
+    border: 1px solid #ccc;
+    border-top: none; /* 上の罫線を消す */
+}
+
+/* --- ヘッダーセル (th) とデータセル (td) の共通スタイル --- */
+.basic-table th,
+.basic-table td {
+    padding: 0.8em 1em; /* 上下の余白・左右の余白 */
+    text-align: left; /* 文字を左揃え（基本） */
+    vertical-align: top; /* セル内のコンテンツを上揃え */
+    border: 1px solid #ddd; /* セルの罫線 */
+}
+
+/* --- ヘッダーセル (th) のスタイル --- */
+.basic-table thead th {
+    background-color: #f2f2f2; /* ヘッダーの背景色 */
+    font-weight: bold; /* 文字を太字に */
+    white-space: nowrap; /* ヘッダーテキストを折り返さない（必要に応じて） */
+}
+
+/* --- ボディの行 (tbody tr) のスタイル --- */
+/* ストライプ表示（偶数行） */
+.basic-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* 偶数行の背景色 */
+}
+
+/* (オプション) ホバー時のスタイル */
+.basic-table tbody tr:hover {
+    background-color: #e9e9e9; /* マウスホバー時の背景色 */
+}
+
+/* --- 特定の列の調整（例：価格を右寄せ） --- */
+.basic-table .price {
+    text-align: right; /* 右揃え */
+    font-family: monospace; /* 等幅フォント（数字が見やすい） */
+}
+
+/* --- 在庫などの特定のテキスト --- */
+/* 必要であれば、在庫状況に応じて色を変えるなどのスタイルを追加 */
+/*
+.basic-table td:last-child {
+    text-align: center;
+}
+*/

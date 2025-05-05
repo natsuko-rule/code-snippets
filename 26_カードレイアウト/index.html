@@ -3,10 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>カードレイアウト</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>カードレイアウトの例</h1>
+
+<div class="card-container">
+    <!-- カード 1 -->
+    <article class="card">
+        <div class="card-image">
+            <a href="#"> <!-- 画像にリンクをつける場合 -->
+                <img src="./img/sample01.webp" alt="カード1の説明的な代替テキスト">
+            </a>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title"><a href="#">カードタイトル 1</a></h2>
+            <p class="card-text">ここにカードの説明文が入ります。数行程度のテキストを表示するのに適しています。</p>
+            <div class="card-footer">
+                <a href="#" class="card-button">詳しく見る</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- カード 2 -->
+    <article class="card">
+        <div class="card-image">
+            <a href="#">
+                <img src="./img/sample02.webp" alt="カード2の説明的な代替テキスト">
+            </a>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title"><a href="#">少し長めのカードタイトル 2</a></h2>
+            <p class="card-text">説明文はカードによって長さが異なる場合がありますが、レイアウトは維持されます。</p>
+            <div class="card-footer">
+                <span class="card-info">カテゴリA</span> <!-- ボタン以外の情報例 -->
+                <a href="#" class="card-button">続きを読む</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- カード 3 -->
+    <article class="card">
+        <div class="card-image">
+            <img src="./img/sample03.webp" alt="カード3の説明的な代替テキスト">
+            <!-- 画像にリンクをつけない場合 -->
+        </div>
+        <div class="card-content">
+            <h2 class="card-title"><a href="#">カードタイトル 3</a></h2>
+            <p class="card-text">ボタンがないカードの例です。</p>
+            <div class="card-footer">
+                <span class="card-info">2024/07/27</span>
+            </div>
+        </div>
+    </article>
+
+    <!-- カード 4 (必要なら追加) -->
+    <article class="card">
+        <div class="card-image">
+            <a href="#">
+                <img src="./img/sample04.jpeg" alt="カード4の説明的な代替テキスト">
+            </a>
+        </div>
+        <div class="card-content">
+            <h2 class="card-title"><a href="#">カードタイトル 4</a></h2>
+            <p class="card-text">4つ目のカードサンプルです。</p>
+            <div class="card-footer">
+                <a href="#" class="card-button">詳細</a>
+            </div>
+        </div>
+    </article>
+    <!-- カードは必要に応じて追加 -->
+
+</div><!-- /.card-container -->
 </body>
 </html>

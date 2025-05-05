@@ -1,0 +1,204 @@
+/* --- 基本設定 & ヘッダー --- */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+}
+
+.site-header {
+    background-color: #eee;
+    padding: 10px 0;
+    position: relative;
+    z-index: 10;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.site-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- ハンバーガーボタン --- */
+.hamburger-button {
+    display: block;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    z-index: 1001;
+}
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-line:nth-child(1) {
+    top: 12px;
+}
+.hamburger-line:nth-child(2) {
+    top: 20px;
+}
+.hamburger-line:nth-child(3) {
+    top: 28px;
+}
+/* Active state */
+.hamburger-button.is-menu-active .hamburger-line:nth-child(1) {
+    transform: translate(-50%, 8px) rotate(45deg);
+}
+.hamburger-button.is-menu-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-button.is-menu-active .hamburger-line:nth-child(3) {
+    transform: translate(-50%, -8px) rotate(-45deg);
+}
+
+/* --- グローバルナビゲーション (メニュー本体) --- */
+.global-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    max-width: 80%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.98);
+    color: #fff;
+    padding-top: 70px; /* ヘッダー高さ分など調整 */
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    visibility: hidden;
+    z-index: 1000;
+    overflow-y: auto;
+}
+.global-nav.is-menu-active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* --- メニューリスト & 項目 --- */
+.menu-list {
+    padding: 1em 0;
+}
+.menu-item a,
+.accordion-menu-trigger {
+    display: flex; /* アイコン配置のため */
+    align-items: center;
+    justify-content: space-between; /* テキストとアイコンを両端へ */
+    width: 100%; /* Buttonの場合必要 */
+    padding: 0.9em 1.5em;
+    color: #fff;
+    transition: background-color 0.2s;
+    box-sizing: border-box; /* paddingを含めて幅計算 */
+}
+.menu-item a:hover, .menu-item a:focus,
+.accordion-menu-trigger:hover, .accordion-menu-trigger:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+/* --- アコーディオン用トリガー & アイコン --- */
+.accordion-menu-trigger {
+    /* Button固有のスタイルリセット */
+    text-align: left;
+    font-weight: normal; /* 通常のリンクと合わせる */
+}
+.submenu-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    position: relative;
+    margin-left: 0.8em; /* テキストとの間隔 */
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.submenu-icon::before, .submenu-icon::after { /* プラス記号 */
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    background-color: currentColor;
+}
+.submenu-icon::before {
+    width: 60%;
+    height: 1px;
+    transform: translate(-50%, -50%);
+}
+.submenu-icon::after {
+    width: 1px;
+    height: 60%;
+    transform: translate(-50%, -50%);
+}
+
+/* アコーディオンが開いた状態のアイコン (-) */
+.accordion-menu-trigger[aria-expanded="true"] .submenu-icon {
+    transform: rotate(45deg); /* アイコンを回転させる */
+}
+.accordion-menu-trigger[aria-expanded="true"] .submenu-icon::after {
+    opacity: 0; /* 縦棒を消す */
+}
+
+
+/* --- サブメニュー --- */
+.submenu {
+    background-color: rgba(0, 0, 0, 0.2); /* 背景色を少し変える */
+    overflow: hidden;
+    max-height: 0; /* 初期状態は高さを0に */
+    visibility: hidden; /* JSなしでもアクセスできないように */
+    transition: max-height 0.4s cubic-bezier(0.65, 0, 0.35, 1), /* 高さの変化 */
+                visibility 0s 0.4s;
+}
+/* 開いた状態のサブメニュー (JSでmax-heightを設定する) */
+.accordion-menu-trigger[aria-expanded="true"] + .submenu {
+    visibility: visible;
+    transition: max-height 0.4s cubic-bezier(0.65, 0, 0.35, 1),
+                visibility 0s 0s;
+}
+
+.submenu-item a {
+    padding-left: 2.5em; /* インデント */
+    font-size: 0.9em; /* 少し小さく */
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+
+/* --- (オプション) 背景オーバーレイ --- */
+body::before { /* メニュー展開時の背景オーバーレイ */
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease,　visibility 0.4s ease;
+    z-index: 999;
+}
+body.is-menu-open::before { opacity: 1; visibility: visible; }
+body.is-menu-open { overflow: hidden; } /* 背景スクロール禁止 */

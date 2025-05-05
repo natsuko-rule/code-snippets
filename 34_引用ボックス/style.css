@@ -1,0 +1,63 @@
+/* 基本スタイル (例1から一部流用・調整) */
+.quote-box {
+    margin: 1.5em 10px;
+    padding: 1.5em 2em; /* 余白を少し広めに */
+    background-color: #f1f3f5;
+    border-left: 4px solid #6c757d; /* ボーダー色を少し変更 */
+    position: relative; /* ::beforeの位置決めの基準 */
+}
+
+.quote-box p {
+    margin: 0 0 1em 0; /* 段落下のマージン */
+}
+.quote-box p:last-of-type { /* blockquote直下の最後のp */
+    margin-bottom: 0;
+}
+
+
+/* 引用符付きスタイル (.with-cite) */
+.quote-box.with-cite {
+    padding-left: 3.5em; /* 引用符のスペース確保 */
+}
+
+.quote-box.with-cite::before {
+    content: "“"; /* 開始引用符 */
+    font-family: Georgia, serif; /* 引用符に適したフォント */
+    font-size: 4em; /* 引用符のサイズ */
+    color: #adb5bd; /* 引用符の色 (薄いグレー) */
+    position: absolute;
+    left: 0.2em; /* 左からの位置 */
+    top: 0.1em;  /* 上からの位置 */
+    line-height: 1;
+}
+
+/* 引用元 (footer) のスタイル */
+.quote-box footer {
+    margin-top: 1em;
+    text-align: right; /* 右寄せ */
+    font-size: 0.9em;
+    color: #6c757d; /* 少し薄めの色 */
+    font-style: normal; /* footer部分は斜体にしない */
+}
+
+/* 引用元内のciteタグやリンクのスタイル */
+.quote-box cite {
+    font-style: normal; /* citeも斜体にしない場合 */
+}
+.quote-box footer a {
+    color: inherit; /* 親要素の色を継承 */
+    text-decoration: none;
+}
+.quote-box footer a:hover {
+    text-decoration: underline;
+}
+
+/* 大きめの引用符を持つバリエーション */
+.quote-box.larger-quote::before {
+    font-size: 5em;
+    left: 0.15em;
+    top: 0;
+}
+.quote-box.larger-quote {
+    padding-left: 4em;
+}

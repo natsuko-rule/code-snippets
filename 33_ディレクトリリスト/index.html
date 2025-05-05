@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>ディレクトリリスト</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <ul class="tree-list">
+        <li>
+            <span class="folder-label">folder1</span>
+            <ul>
+                <li>index.html</li>
+                <li>style.css</li>
+            </ul>
+        </li>
+        <li>
+            <span class="folder-label">folder2</span>
+            <ul>
+                <li>
+                <span class="folder-label">folder2-1</span>
+                <ul>
+                    <li>index.html</li>
+                    <li>style.css</li>
+                </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </body>
 </html>

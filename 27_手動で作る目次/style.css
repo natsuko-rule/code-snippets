@@ -1,0 +1,82 @@
+/* 目次全体のスタイル */
+.toc {
+    background-color: #f8f9fa; /* 背景色 */
+    border: 1px solid #e0e0e0; /* 枠線 */
+    padding: 15px 20px;        /* 内側の余白 */
+    margin: 2em 0;           /* 外側の余白 */
+    border-radius: 5px;        /* 角丸 */
+    max-width: 400px;          /* 最大幅（任意）*/
+}
+
+/* 目次タイトルのスタイル */
+.toc-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc; /* タイトルの下に線 */
+    padding-bottom: 5px;
+}
+
+/* 目次リストのスタイル */
+.toc-list,
+.toc-list ul {
+    list-style: none; /* デフォルトのマーカーを消す */
+    padding-left: 0;   /* 左のパディングをリセット */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.toc-list > li {
+    margin-bottom: 8px; /* 各項目の下の余白 */
+}
+
+/* 階層（ネスト）したリストのインデント */
+.toc-list ul {
+    padding-left: 20px; /* サブ項目のインデント */
+    margin-top: 5px;    /* サブ項目リストの上の余白 */
+}
+.toc-list ul li {
+margin-bottom: 5px;
+}
+
+/* リンクのスタイル */
+.toc-list a {
+text-decoration: none; /* 下線を消す */
+    color: #0056b3;        /* リンク色 */
+    transition: color 0.2s ease;
+}
+
+.toc-list a:hover,
+.toc-list a:focus {
+    text-decoration: underline; /* ホバー/フォーカス時に下線を表示 */
+    color: #007bff;
+}
+
+/* 番号付きリストのカウンターを使う場合（olの場合） */
+.toc-list {
+    counter-reset: toc-counter; /* カウンターを初期化 */
+}
+.toc-list > li {
+    counter-increment: toc-counter; /* カウンターを増やす */
+}
+.toc-list > li > a::before {
+    content: counter(toc-counter) ". "; /* 番号を表示 */
+    font-weight: bold;
+    margin-right: 5px;
+}
+.toc-list ul {
+    counter-reset: toc-sub-counter; /* サブカウンターを初期化 */
+}
+.toc-list ul li {
+    counter-increment: toc-sub-counter; /* サブカウンターを増やす */
+}
+.toc-list ul li a::before {
+    content: counter(toc-counter) "." counter(toc-sub-counter) ". "; /* 番号を表示 (例: 1.1. ) */
+    font-weight: normal; /* 番号の太さを変える（任意）*/
+    margin-right: 5px;
+}
+
+/* スムーズスクロール（任意） */
+html {
+    scroll-behavior: smooth;
+}
