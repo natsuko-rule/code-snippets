@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>JSによるスムーススクロール</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <header class="site-header"> <!-- オフセット計算用にクラス名が必要 -->
+        <nav>
+            <a href="#section1" class="smooth-scroll-link">セクション1へ</a>
+            <a href="#section2" class="smooth-scroll-link">セクション2へ</a>
+            <a href="#section3" class="smooth-scroll-link">セクション3へ</a>
+        </nav>
+    </header>
     
+    <main>
+        <section id="top" style="height: 100vh; background-color: #eee; display:flex; align-items: center; justify-content: center;">
+            <h1>ページトップ</h1>
+        </section>
+    
+        <section id="section1" style="height: 100vh; background-color: #aed6f1;">
+            <h2>セクション 1</h2>
+            <a href="#top" class="smooth-scroll-link">トップへ戻る</a> <!-- 戻るリンクにもクラス付与 -->
+        </section>
+    
+        <section id="section2" style="height: 100vh; background-color: #f5cba7;">
+            <h2>セクション 2</h2>
+            <a href="#top" class="smooth-scroll-link">トップへ戻る</a>
+        </section>
+    
+        <section id="section3" style="height: 100vh; background-color: #d5f5e3;">
+            <h2>セクション 3</h2>
+            <a href="#top" class="smooth-scroll-link">トップへ戻る</a>
+        </section>
+    </main>
 </body>
 </html>

@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>スクロールに応じた要素のフェードイン</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <h1>方向別フェードイン</h1>
+<p>下にスクロールしてください。</p>
+
+<div class="spacer">↓ スクロール</div>
+
+<!-- 下からフェードイン -->
+<section class="content-box scroll-animation-target animation-hidden fade-in-from-bottom">
+    <h2>下からフェードイン</h2>
+    <p>この要素は下から現れます。</p>
+</section>
+
+<div class="spacer">↓ スクロール</div>
+
+<!-- 左からフェードイン -->
+<section class="content-box scroll-animation-target animation-hidden fade-in-from-left">
+    <h2>左からフェードイン</h2>
+    <p>この要素は左から現れます。</p>
+</section>
+
+<div class="spacer">↓ スクロール</div>
+
+<!-- 右からフェードイン -->
+<section class="content-box scroll-animation-target animation-hidden fade-in-from-right">
+    <h2>右からフェードイン</h2>
+    <p>この要素は右から現れます。</p>
+</section>
+
+<div class="spacer">↓ スクロール</div>
+
+<!-- ズームイン (おまけ) -->
+<section class="content-box scroll-animation-target animation-hidden zoom-in">
+    <h2>ズームイン</h2>
+    <p>この要素は拡大しながら現れます。</p>
+</section>
+
+<div class="spacer">ページの終わり</div>
 </body>
 </html>

@@ -1,0 +1,35 @@
+/* 回転用キーフレーム */
+@keyframes spin {
+    from {
+      transform: rotate(0deg); /* 0度回転 */
+    }
+    to {
+      transform: rotate(360deg); /* 360度回転 */
+    }
+}
+
+/* 要素共通のスタイル */
+.box {
+    width: 150px;
+    height: 100px; /* 回転がわかりやすいように高さを指定 */
+    padding: 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    margin: 20px;
+    display: flex; /* 文字を中央揃えにするため */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 回転を適用 */
+.rotate-box {
+    background-color: #ffc107;
+    animation: spin 4s linear infinite;
+/* 意味:
+    spin: アニメーション名
+    4s: 4秒かけて1回転
+    linear: 一定速度
+    infinite: 無限に繰り返す
+*/
+}

@@ -1,0 +1,45 @@
+/* --- 基本設定とダミースペーサー --- */
+body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background-color: #f9f9f9;}
+h1, h2 { margin-top: 0; }
+.spacer { height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; color: #aaa; margin: 40px 0; border: 2px dashed #ddd; }
+
+/* --- アニメーション対象の基本スタイル --- */
+.content-box {
+    background-color: #fff;
+    padding: 2em;
+    margin: 50px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    /* ▼共通のアニメーション設定 */
+    transition: opacity 0.8s cubic-bezier(0.33, 1, 0.68, 1),
+                transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* --- 初期状態 (共通の非表示スタイル) --- */
+.animation-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- 方向別の初期位置 --- */
+.fade-in-from-bottom.animation-hidden {
+    transform: translateY(40px); /* 開始位置を下に40px */
+}
+.fade-in-from-left.animation-hidden {
+    transform: translateX(-40px); /* 開始位置を左に40px */
+}
+.fade-in-from-right.animation-hidden {
+    transform: translateX(40px); /* 開始位置を右に40px */
+}
+.zoom-in.animation-hidden {
+    transform: scale(0.9); /* 少し縮小しておく */
+}
+
+/* --- 表示状態 (is-visible クラスが付いた時) --- */
+/* is-visible クラスが付くと、opacity と transform が初期値(通常値)に戻る */
+.scroll-animation-target.is-visible {
+    opacity: 1;
+    transform: none; /* transform を初期値(translate(0,0), scale(1)など)に戻す */
+    visibility: visible;
+}

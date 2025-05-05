@@ -1,0 +1,27 @@
+/* アニメーションの定義 */
+@keyframes fadeIn {
+    /* アニメーション開始時 (0% と同じ意味) */
+    from {
+      opacity: 0; /* 透明 */
+    }
+    /* アニメーション終了時 (100% と同じ意味) */
+    to {
+      opacity: 1; /* 不透明 (見える状態) */
+    }
+}
+
+/* アニメーションを適用する要素 */
+.fade-in-box {
+    width: 150px;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    margin: 20px;
+
+    /* animationプロパティでキーフレームと動作を指定 */
+    animation-name: fadeIn;        /* 使用する @keyframes の名前 */
+    animation-duration: 2s;        /* アニメーションの時間 (2秒) */
+    animation-timing-function: ease-in; /* 開始がゆっくりな変化 */
+    /* animation-fill-mode: forwards; */ /* アニメーション終了後、最後の状態(opacity: 1)を維持したい場合 */
+}

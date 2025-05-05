@@ -1,0 +1,47 @@
+/* リンクのホバー */
+.pseudo-class-link {
+    color: #2980b9;
+    text-decoration: underline;
+}
+.pseudo-class-link:hover {
+    color: #e74c3c; /* ホバー時の色 */
+    text-decoration: none; /* ホバー時に下線を消す（例） */
+}
+
+/* 入力欄のフォーカス */
+.pseudo-class-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.pseudo-class-input:focus {
+    border-color: #3498db; /* フォーカス時の枠線の色 */
+    outline: none; /* デフォルトのアウトラインを消す */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* フォーカス時の影 */
+}
+
+/* ボタンのホバー、フォーカス、アクティブ */
+.pseudo-class-button:hover {
+    background-color: #ddd; /* ホバー時の背景色（基本ボタンの場合） */
+    border-color: #bbb;
+}
+.pseudo-class-button:focus {
+    outline: 2px solid #aed6f1; /* フォーカス時のアウトライン（例） */
+    outline-offset: 2px;
+    /* 必要に応じて背景色なども変える */
+    /* background-color: #e0e0e0; */
+}
+.pseudo-class-button:active { /* クリック中 */
+    background-color: #ccc;
+    transform: scale(0.98); /* 少し小さくする */
+}
+/* プライマリボタンの疑似クラス（例） */
+.primary-button:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+.primary-button:active {
+    background-color: #2471a3;
+    border-color: #2471a3;
+    transform: scale(0.98);
+}

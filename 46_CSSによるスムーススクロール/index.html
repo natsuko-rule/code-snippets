@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>CSSによるスムーススクロール</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="site-header">
+        <nav>
+            <a href="#section1">セクション1へ</a>
+            <a href="#section2">セクション2へ</a>
+            <a href="#section3">セクション3へ</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="top" style="height: 100vh; background-color: #eee; display:flex; align-items: center; justify-content: center;">
+            <h1>ページトップ</h1>
+        </section>
+    
+        <section id="section1" style="height: 100vh; background-color: #aed6f1;">
+            <h2>セクション 1</h2>
+            <a href="#top">トップへ戻る</a>
+        </section>
+    
+        <section id="section2" style="height: 100vh; background-color: #f5cba7;">
+            <h2>セクション 2</h2>
+            <a href="#top">トップへ戻る</a>
+        </section>
+    
+        <section id="section3" style="height: 100vh; background-color: #d5f5e3;">
+            <h2>セクション 3</h2>
+            <a href="#top">トップへ戻る</a>
+        </section>
+    </main>
     
 </body>
 </html>

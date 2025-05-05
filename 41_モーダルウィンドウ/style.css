@@ -1,0 +1,106 @@
+/* --- 基本設定 --- */
+body.modal-open {
+    overflow: hidden; /* モーダル表示中は背景のスクロールを禁止 */
+}
+
+/* --- モーダルコンテナ --- */
+.modal-container {
+    position: fixed; /* 画面に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* 他の要素より手前に表示 */
+
+    /* 中央揃えのためのFlexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 初期状態は非表示 */
+    visibility: hidden;
+    opacity: 0;
+
+    /* 表示時のアニメーション */
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+/* モーダル表示時のスタイル */
+.modal-container.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- 背景オーバーレイ --- */
+.modal-overlay {
+    position: absolute; /* コンテナいっぱいに広げる */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
+    cursor: pointer; /* クリックできることを示す */
+}
+
+/* --- モーダルコンテンツエリア --- */
+.modal-content {
+    position: relative; /* 閉じるボタンの配置基準 */
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 90%; /* 最大幅 */
+    width: 500px; /* 基本の幅 */
+    max-height: 85vh; /* 最大高さ */
+    overflow-y: auto; /* 内容が多い場合にスクロール */
+    z-index: 1001; /* オーバーレイより手前 */
+
+    /* 表示時のアニメーション (オプション: スケールアップ) */
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* モーダル表示時のコンテンツエリアのアニメーション */
+.modal-container.is-visible .modal-content {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 0.1s; /* コンテナのフェードインより少し遅らせる */
+}
+
+
+/* --- 閉じるボタン --- */
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+    padding: 0.2em; /* クリック領域確保 */
+    transition: color 0.2s ease;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: #333;
+    outline: none;
+}
+
+/* --- 開くボタン (サンプル用) --- */
+.modal-open-button {
+    padding: 0.8em 1.5em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+.modal-open-button:hover {
+    background-color: #2980b9;
+}

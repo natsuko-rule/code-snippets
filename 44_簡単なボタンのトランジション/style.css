@@ -1,0 +1,29 @@
+.transition-box {
+    width: 150px;
+    height: 100px;
+    background-color: #2ecc71; /* 初期状態の背景色 */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    /* ↓ transition プロパティで変化させたいCSSプロパティと時間を指定 */
+    /* 例: background-colorが0.4秒、transformが0.3秒かけて変化 */
+    transition: background-color 0.4s ease-in-out, transform 0.3s ease;
+}
+
+.transition-box:hover {
+    background-color: #e74c3c; /* ホバー時の背景色 */
+    transform: scale(1.1) rotate(5deg); /* ホバー時に拡大して少し回転 */
+}
+
+/* ボタンにもtransitionは適用済み (.basic-button) なので、
+   :hoverや:activeのスタイル変化が滑らかになる */
+.transition-button:hover {
+    background-color: #e67e22; /* ホバー時の色を変えてみる */
+    color: white;
+}
+.transition-button:active {
+    background-color: #d35400;
+    transform: scale(0.95) translateY(1px); /* クリック時の動きを追加 */
+}

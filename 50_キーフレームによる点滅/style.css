@@ -1,0 +1,25 @@
+/* 点滅用キーフレーム */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; } /* 50%地点で薄くする */
+    100% { opacity: 1; }
+}
+
+/* 要素のスタイル */
+.blink-box {
+    width: 150px;
+    padding: 20px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: center; /* 文字を中央揃え */
+  
+    animation: blink 1.5s ease-in-out infinite;
+/* 意味:
+    blink: アニメーション名
+    1.5s: 1.5秒で1回の点滅サイクル
+    ease-in-out: 開始と終了がゆっくり
+    infinite: 無限に繰り返す
+*/
+}

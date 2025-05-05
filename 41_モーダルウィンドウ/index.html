@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>モーダルウィンドウ</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <!-- モーダルを開くトリガーボタン -->
+<button type="button" class="modal-open-button" data-modal-target="myModal">モーダルを開く</button>
+
+<!-- モーダルウィンドウ本体 -->
+<div class="modal-container" id="myModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <!-- 背景オーバーレイ -->
+    <div class="modal-overlay" tabindex="-1" data-modal-close></div>
+
+    <!-- モーダルコンテンツエリア -->
+    <div class="modal-content">
+        <!-- 閉じるボタン -->
+        <button type="button" class="modal-close-button" aria-label="モーダルを閉じる" data-modal-close>×</button>
+
+        <!-- モーダルの内容 -->
+        <h2 id="modalTitle">モーダルのタイトル</h2>
+        <p>ここにモーダルウィンドウのコンテンツが入ります。</p>
+        <p>テキストや画像、フォームなどを配置できます。</p>
+        <img src="./img/sample01.webp" alt="サンプル画像" style="max-width: 100%; height: auto; margin-top: 1em;">
+        <!-- /モーダルの内容 -->
+
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-container -->
+
+<div style="height: 150vh; background: #eee; margin-top: 20px; padding: 10px;">
+    <p>背景コンテンツ（スクロール確認用）</p>
+</div>
 </body>
 </html>

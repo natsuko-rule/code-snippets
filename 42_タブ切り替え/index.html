@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>タブ切り替え</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <h1>基本的なタブ切り替え</h1>
+
+<div class="tabs-container">
+    <!-- タブボタンのリスト -->
+    <div class="tab-list" role="tablist" aria-label="コンテンツタブ">
+        <button class="tab-button" type="button" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-button-1">
+            タブ 1
+        </button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-button-2" tabindex="-1">
+            タブ 2
+        </button>
+        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-button-3" tabindex="-1">
+            タブ 3
+        </button>
+        <!-- タブを追加する場合はここに追加 -->
+    </div>
+
+    <!-- タブパネル（コンテンツ） -->
+    <div class="tab-panels">
+        <div class="tab-panel" role="tabpanel" id="tab-panel-1" aria-labelledby="tab-button-1">
+            <h2>タブ1のコンテンツ</h2>
+            <p>これはタブ1に対応するコンテンツです。自由にテキストや画像などを配置できます。</p>
+            <img src="https://via.placeholder.com/400x150/3498db/ffffff?text=Panel+1+Image" alt="" style="max-width: 100%;">
+        </div>
+        <div class="tab-panel" role="tabpanel" id="tab-panel-2" aria-labelledby="tab-button-2" hidden>
+            <h2>タブ2のコンテンツ</h2>
+            <p>こちらはタブ2のコンテンツエリアです。リストなどを表示することも可能です。</p>
+            <ul>
+                <li>リスト項目 A</li>
+                <li>リスト項目 B</li>
+                <li>リスト項目 C</li>
+            </ul>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="tab-panel-3" aria-labelledby="tab-button-3" hidden>
+            <h2>タブ3のコンテンツ</h2>
+            <p>そして、これがタブ3のコンテンツです。</p>
+            <p>サンプルテキストが続きます。</p>
+        </div>
+        <!-- パネルを追加する場合はここに追加 -->
+    </div>
+</div><!-- /.tabs-container -->
 </body>
 </html>
