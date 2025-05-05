@@ -1,0 +1,74 @@
+/* 例1 */
+.external-link::after {
+    content: " ↗️"; /* 表示したいアイコンやテキスト (前後にスペースを入れると見やすい) */
+    /* content: " [外部リンク]"; */ /* テキストで示す場合 */
+    /* アイコンフォントを使う場合は content: "\f35d"; font-family: "Font Awesome 5 Free"; など */
+
+    font-size: 0.8em; /* アイコンのサイズを少し小さく */
+    margin-left: 0.3em; /* リンクテキストとアイコンの間隔 */
+    display: inline-block; /* アイコンが改行されないように */
+    vertical-align: super; /* 少し上に表示（任意） */
+    text-decoration: none; /* アイコンに下線がつかないように（リンクの装飾による） */
+    color: #555; /* アイコンの色（リンク色と変える場合）*/
+    }
+
+    /* 属性セレクタを使う場合 (classを付けなくてもtarget="_blank"を持つa要素に適用) */
+    /*
+    a[target="_blank"]::after {
+    content: " ↗️";
+    font-size: 0.8em;
+    margin-left: 0.3em;
+    display: inline-block;
+    vertical-align: super;
+    text-decoration: none;
+    color: #555;
+    }
+    */
+
+    /* 例2 */
+    .heading-with-line {
+    margin-bottom: 1.5em; /* 見出しと線の間隔 + 線と本文の間隔を考慮 */
+    position: relative; /* ::after の位置決めの基準 */
+    }
+
+    .heading-with-line::after {
+    content: ""; /* 図形なので内容は空にする */
+    display: block; /* ブロック要素として表示（改行される） */
+    width: 50px; /* 線の幅 */
+    height: 3px; /* 線の高さ（太さ） */
+    background-color: #dc3545; /* 線の色 */
+    margin-top: 0.5em; /* 見出しテキストと線の間隔 */
+
+    /* 中央揃えにしたい場合 (margin-left/right: auto を使う方法) */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+
+    /* 左寄せのままの場合 */
+    /* margin-left: 0; */
+
+    /* position: absolute を使う場合 */
+    /* position: absolute; */
+    /* bottom: -10px; */ /* 見出しの下、指定した位置に配置 */
+    /* left: 0; */       /* 左端から */
+    }
+
+    /* 例3 */
+    .styled-quote {
+    border-left: 4px solid #ccc; /* 左側の引用線 */
+    padding: 1em 1.5em; /* 内側の余白 */
+    margin: 1.5em 0; /* 外側の余白 */
+    background-color: #f8f9fa; /* 背景色 */
+    position: relative; /* ::after の位置決めの基準 */
+    font-style: italic; /* 斜体にする（任意） */
+    }
+
+    .styled-quote::after {
+    content: "”"; /* 閉じ引用符 */
+    font-size: 4em; /* 引用符のサイズを大きく */
+    color: #e0e0e0; /* 引用符の色を薄く */
+    position: absolute; /* 絶対位置指定 */
+    right: 0.3em; /* 右端からの位置 */
+    bottom: -0.3em; /* 下端からの位置 (少しはみ出すように) */
+    line-height: 1; /* 行の高さを調整 */
+    z-index: -1; /* テキストの背面に配置（任意） */
+    }

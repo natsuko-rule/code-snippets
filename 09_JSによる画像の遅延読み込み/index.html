@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>JSによる画像の遅延読み込み</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <h1>JSによる画像の遅延読み込み</h1>
+<p>下にスクロールすると、画像が必要になったタイミングで読み込まれます。</p>
+
+<div class="spacer">↑ 上の画像</div>
+
+<img
+    class="lazyload"
+    src="./img/sample01.webp"   /* ← 初期表示はプレースホルダー or 低解像度画像 */
+    data-src="https://as1.ftcdn.net/jpg/02/78/77/58/1000_F_278775847_fYIDPTLYGvZ03TgPHPVUUaxy1oEzBNJg.jpg" /* ← 実際の高解像度の画像のURLはdata属性に */
+    alt="遅延読み込み画像1"
+    width="600"
+    height="400">
+
+<div class="spacer">↓ 下の画像へスクロール</div>
+
+<img
+    class="lazyload"
+    src="./img/sample02.webp"
+    data-src="https://as1.ftcdn.net/v2/jpg/04/04/64/84/1000_F_404648446_bP9KGnKBnHvqudrsb3cZ11uNCu0kJO2k.jpg"
+    alt="遅延読み込み画像2"
+    width="600"
+    height="400">
+
+<div class="spacer">↓ 下の画像へスクロール</div>
+
+<img
+    class="lazyload"
+    src="./img/sample03.webp"
+    data-src="https://as2.ftcdn.net/v2/jpg/04/69/31/17/1000_F_469311703_XV3z3QPypY3QkxFSpfuZ9NlFanm9cpgc.jpg"
+    alt="遅延読み込み画像3"
+    width="600"
+    height="400">
 </body>
 </html>

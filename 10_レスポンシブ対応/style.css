@@ -1,0 +1,22 @@
+.responsive-example {
+    background-color: #fdebd0; /* デフォルトの背景色 */
+    padding: 20px;
+    border: 1px solid #f5cba7;
+    text-align: center;
+    transition: background-color 0.3s ease; /* 色の変化を滑らかに（任意） */
+}
+
+/* 画面幅が768px以下の場合に適用 */
+@media (max-width: 768px) {
+    .responsive-example {
+        background-color: #aed6f1; /* スマホなどでの背景色 */
+        border-color: #5dade2;
+    }
+
+    body {
+        padding: 10px; /* スマホ表示で余白を減らすなど */
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}

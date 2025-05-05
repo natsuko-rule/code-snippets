@@ -1,0 +1,19 @@
+img {
+    display: block; /* 余計な余白を防ぐ */
+    margin: 30px auto; /* 画像間のスペース */
+    background-color: #eee; /* 読み込み中の背景色 */
+    border: 1px solid #ccc;
+}
+.spacer { /* ページの高さを出してスクロールさせるための要素 */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #888;
+    width: 80%;
+    border: 1px solid #ddd;
+}

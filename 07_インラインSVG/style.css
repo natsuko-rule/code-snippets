@@ -1,0 +1,25 @@
+/* SVGアイコン共通のスタイル */
+.svg-icon {
+    vertical-align: middle; /* テキストとの垂直位置調整 */
+    margin-right: 0.3em; /* アイコンとテキストの間隔 */
+}
+
+/* 色の変更 (currentColorを使うと親要素の文字色を継承する) */
+.icon-user {
+    fill: #007bff; /* 直接色を指定 */
+    width: 24px;   /* CSSでサイズ指定 */
+    height: 24px;
+}
+
+button .icon-search {
+/* ボタン内のアイコンはボタンの文字色を継承 (HTMLで fill="currentColor" を指定している場合) */
+/* fill: white; */ /* 特定の色にしたい場合 */
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5em;
+}
+
+/* ホバー時に色を変える */
+button:hover .icon-search {
+    fill: yellow;
+}

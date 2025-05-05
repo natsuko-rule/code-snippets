@@ -3,10 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>画像のネイティブ遅延読み込み</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>画像のネイティブ遅延読み込み (loading="lazy")</h1>
+<p>下にスクロールすると、画像が必要になったタイミングで読み込まれます。</p>
+<p>(ブラウザのネットワークタブで確認できます)</p>
+
+<div class="spacer">↑ 上の画像</div>
+
+<img
+    src="./img/sample01.webp"
+    alt="遅延読み込み画像1"
+    width="600"
+    height="400"
+    loading="lazy">  <!-- ← これを追加！ -->
+
+<div class="spacer">↓ 下の画像へスクロール</div>
+
+<img
+    src="./img/sample02.webp"
+    alt="遅延読み込み画像2"
+    width="600"
+    height="400"
+    loading="lazy">  <!-- ← これを追加！ -->
+
+<div class="spacer">↓ 下の画像へスクロール</div>
+
+<img
+    src="./img/sample03.webp"
+    alt="遅延読み込み画像3"
+    width="600"
+    height="400"
+    loading="lazy">  <!-- ← これを追加！ -->
 </body>
 </html>

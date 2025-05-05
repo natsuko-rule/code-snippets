@@ -1,0 +1,20 @@
+img {
+    display: block;
+    margin: 30px auto;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    /* (オプション) 読み込み完了時のフェードイン効果 */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+img.lazyload:not(.loaded) { /* まだ読み込まれていない画像 */
+   opacity: 0.5; /* (例) 半透明にする */
+   /* 必要なら background-image でローディングgifなどを表示 */
+}
+
+.spacer {
+    height: 80vh; display: flex; align-items: center; justify-content: center;
+    background-color: #f0f0f0; margin: 30px auto; text-align: center;
+    font-size: 1.5rem; color: #888; width: 80%; border: 1px solid #ddd;
+}

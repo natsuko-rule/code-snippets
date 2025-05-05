@@ -1,0 +1,49 @@
+/* リスト全体のスタイル調整 */
+.custom-list {
+    list-style: none; /* デフォルトのマーカー(・)を消す */
+    padding-left: 0; /* 左側の余白をリセット */
+}
+
+/* 各リスト項目のスタイル */
+.custom-list li {
+padding-left: 1.8em; /* テキストの開始位置を右にずらす */
+margin-bottom: 0.5em; /* 各項目の下の余白 */
+position: relative; /* ::before の位置決めの基準（任意） */
+}
+
+/* ::before でマーカーを追加 */
+.custom-list li::before {
+content: "✅"; /* 表示したい文字や記号 (絵文字も可) */
+/* content: "▶"; */ /* 例えば右向き三角 */
+/* content: "★"; */ /* 例えば星 */
+
+color: green; /* マーカーの色 */
+font-size: 1.1em; /* マーカーのサイズ調整 */
+margin-right: 0.5em; /* マーカーとテキストの間隔 */
+
+/* 位置を微調整したい場合 (position: absolute を使う方法) */
+position: absolute; /* 絶対位置指定 */
+left: 0; /* 親要素(li)の左端を基準 */
+top: 0; /* 親要素(li)の上端を基準 (行の高さに合わせて調整が必要な場合あり) */
+
+/* positionを使わない場合は、liのpadding-leftと::beforeのmargin-rightで調整 */
+}
+
+.decorated-heading::before {
+content: "◆"; /* 表示したい記号 */
+color: #007bff; /* 記号の色 */
+margin-right: 0.5em; /* 見出しテキストとの間隔 */
+font-size: 0.9em; /* 少し小さくする（任意）*/
+vertical-align: middle; /* 垂直方向の位置を中央に（任意）*/
+}
+
+.decorated-heading-line::before {
+content: ""; /* 図形なので内容は空にする */
+display: inline-block; /* 幅と高さを持たせるために必要 */
+width: 20px; /* 線の幅 */
+height: 4px; /* 線の高さ */
+background-color: #28a745; /* 線の色 */
+margin-right: 0.8em; /* 見出しテキストとの間隔 */
+vertical-align: middle; /* 垂直方向の位置を中央に合わせる */
+border-radius: 2px; /* 角を少し丸める（任意） */
+}
