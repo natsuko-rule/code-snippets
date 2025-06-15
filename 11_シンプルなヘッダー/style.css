@@ -38,6 +38,10 @@
     gap: 10px 25px; /* 縦方向の隙間 横方向の隙間 (折り返し考慮) */
 }
 
+.global-nav li{
+    list-style: none;
+}
+
 .global-nav a {
     display: block; /* クリック領域確保と折り返し時の体裁 */
     color: #555; /* ナビゲーションリンクの色 */
