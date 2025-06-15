@@ -83,13 +83,11 @@
 
 /* --- アコーディオンコンテンツ --- */
 .accordion-content {
-    overflow: hidden; /* はみ出した内容を隠す */
-    max-height: 0; /* 初期状態は高さを0に */
-    visibility: hidden; /* JSなしでもアクセスできないように */
-    transition: max-height 0.4s cubic-bezier(0.65, 0, 0.35, 1), /* 高さの変化 */
-                visibility 0s 0.4s; /* 高さ変化が終わってから隠す/表示 */
-    background-color: #fff;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
 }
+
 /* 開いた状態のコンテンツ */
 .accordion-trigger[aria-expanded="true"] + .accordion-content {
     /* max-height: 500px; */ /* 固定値でも良いが、内容量に注意 */

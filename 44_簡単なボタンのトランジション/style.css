@@ -15,6 +15,7 @@
 .transition-box:hover {
     background-color: #e74c3c; /* ホバー時の背景色 */
     transform: scale(1.1) rotate(5deg); /* ホバー時に拡大して少し回転 */
+    cursor: pointer; /* ホバーした時にカーソルを指に */
 }
 
 /* ボタンにもtransitionは適用済み (.basic-button) なので、
@@ -22,6 +23,7 @@
 .transition-button:hover {
     background-color: #e67e22; /* ホバー時の色を変えてみる */
     color: white;
+    cursor: pointer; /* ホバーした時にカーソルを指に */
 }
 .transition-button:active {
     background-color: #d35400;

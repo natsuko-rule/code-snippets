@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box基本レイアウト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="section">
+        <h2>Flexbox 基本レイアウト</h2>
+        <div class="flex-container example-row">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3 (横並び: row)</div>
+        </div>
+        <div class="flex-container example-column">
+            <div class="flex-item">Item A</div>
+            <div class="flex-item">Item B</div>
+            <div class="flex-item">Item C (縦並び: column)</div>
+        </div>
+        <div class="flex-container example-wrap">
+            <div class="flex-item">Item Wrap 1</div>
+            <div class="flex-item">Item Wrap 2</div>
+            <div class="flex-item">Item Wrap 3</div>
+            <div class="flex-item">Item Wrap 4 (折り返し: wrap)</div>
+        </div>
+        <!-- 左揃え (flex-start) -->
+        <div class="flex-container example-justify__flex-start">
+            <div class="flex-item">Item Justify 1</div>
+            <div class="flex-item">Item Justify 2 (水平揃え: flex-start)</div>
+        </div>
+
+        <!-- 中央揃え (center) -->
+        <div class="flex-container example-justify__center">
+            <div class="flex-item">Item Justify 1</div>
+            <div class="flex-item">Item Justify 2 (水平揃え: center)</div>
+        </div>
+
+        <!-- 右揃え (flex-end) -->
+        <div class="flex-container example-justify__flex-end">
+            <div class="flex-item">Item Justify 1</div>
+            <div class="flex-item">Item Justify 2 (水平揃え: flex-end)</div>
+        </div>
+
+        <!-- 両端揃え (space-between) -->
+        <div class="flex-container example-justify__space-between">
+            <div class="flex-item">Item Justify 1</div>
+            <div class="flex-item">Item Justify 2 (水平揃え: space-between)</div>
+        </div>
+
+        <!-- 均等配置 (space-around) -->
+        <div class="flex-container example-justify__space-around">
+            <div class="flex-item">Item Justify 1</div>
+            <div class="flex-item">Item Justify 2 (水平揃え: space-around)</div>
+        </div>
+
+        <!-- 完全均等配置 (space-evenly) -->
+        <div class="flex-container example-justify__space-evenly">
+            <div class="flex-item">Item Justify 1</div>
+            <div class="flex-item">Item Justify 2 (水平揃え: space-evenly)</div>
+        </div>
+        <!-- 上揃え (flex-start) -->
+        <div class="flex-container example-align__top">
+            <div class="flex-item">Item Align 1</div>
+            <div class="flex-item tall-item">Item Align 2 (垂直揃え: flex-start)</div>
+        </div>
+
+        <!-- 中央揃え (center) -->
+        <div class="flex-container example-align__center">
+            <div class="flex-item">Item Align 1</div>
+            <div class="flex-item tall-item">Item Align 2 (垂直揃え: center)</div>
+        </div>
+
+        <!-- 下揃え (flex-end) -->
+        <div class="flex-container example-align__bottom">
+            <div class="flex-item">Item Align 1</div>
+            <div class="flex-item tall-item">Item Align 2 (垂直揃え: flex-end)</div>
+        </div>
+
+        <!-- 高さを自動伸縮 (stretch) -->
+        <div class="flex-container example-align__stretch">
+            <div class="flex-item">Item Align 1</div>
+            <div class="flex-item">Item Align 2 (垂直揃え: stretch)</div>
+        </div>
+
+        <!-- テキストのベースライン揃え (baseline) -->
+        <div class="flex-container example-align__baseline">
+            <div class="flex-item">Item Align 1</div>
+            <div class="flex-item tall-item">Item Align 2 (垂直揃え: baseline)</div>
+        </div>
+    </section>
+</body>
+</html>
